@@ -1,6 +1,6 @@
 import { Box, Link, Typography } from "@mui/material";
 import { useState } from "react";
-import SpannerVertical from "../Spanner/SpannerVertical";
+import Spanner from "../Spanner/Spanner";
 
 const NavLink = ({ href, title }) => {
     const [hover, setHover] = useState(false);
@@ -16,7 +16,7 @@ const NavLink = ({ href, title }) => {
             })}
         >
             <Typography fontFamily="Anton" fontSize="1rem">
-                <SpannerVertical text={title} hover={hover} />
+                <Spanner text={title} hover={hover} />
             </Typography>
             <Box
                 sx={(theme) => ({

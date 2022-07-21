@@ -4,16 +4,20 @@ import {
     Button,
     CircularProgress,
     Dialog,
+    DialogActions,
+    IconButton,
     Modal,
     Paper,
+    Tooltip,
 } from "@mui/material";
 import React, { useState } from "react";
 import Spanner from "../Spanner/Spanner";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import "./Resume.css";
+import { Download } from "@mui/icons-material";
+import Btn from "../Other/Btn";
 
 const Resume = ({ title = "Resume" }) => {
-    const [hover, setHover] = useState(false);
     const [open, setOpen] = useState(false);
     const [pages, setPages] = useState(null);
 
@@ -27,15 +31,7 @@ const Resume = ({ title = "Resume" }) => {
 
     return (
         <>
-            <Button
-                onClick={handleOpen}
-                onMouseEnter={() => setHover(true)}
-                onMouseLeave={() => setHover(false)}
-                sx={{ textTransform: "none", fontFamily: "Anton", mt: 5 }}
-                variant="contained"
-            >
-                <Spanner text={title} hover={hover} />
-            </Button>
+            <Btn onClick={handleOpen} title={title} />
             <Dialog
                 open={open}
                 onClose={handleClose}
@@ -44,6 +40,7 @@ const Resume = ({ title = "Resume" }) => {
                 sx={{
                     "& .MuiPaper-root": {
                         background: "transparent",
+                        boxShadow: "none",
                         m: 5,
                         maxWidth: "100%",
                         overflow: "hidden",
@@ -61,6 +58,16 @@ const Resume = ({ title = "Resume" }) => {
                         <Page key={idx} pageNumber={idx + 1} className="page" />
                     ))}
                 </Document>
+                {pages && (
+                    <DialogActions>
+                        <Btn
+                            title={"Download"}
+                            startIcon={<Download />}
+                            href="/Resume/Resume.pdf"
+                            download={"Divyansh_Falodiya_Resume.pdf"}
+                        />
+                    </DialogActions>
+                )}
             </Dialog>
         </>
     );

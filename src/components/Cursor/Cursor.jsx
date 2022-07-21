@@ -8,21 +8,36 @@ const Cursor = () => {
         top: 0,
         left: 0,
         scale: 1,
+        background: theme.palette.text.primary,
         delay: 1000,
     }));
     const handleMouseMove = (e) => {
         const elements = document.elementsFromPoint(e.clientX, e.clientY);
-        let scale = 1;
+        let opt = [
+            {
+                scale: 1,
+                background: theme.palette.text.primary,
+            },
+            {
+                scale: 1.5,
+                background: theme.palette.primary.main,
+            },
+        ];
+        let choice = 0;
         for (let i = 0; i < elements.length; i++) {
             if (
                 elements[i].tagName === "A" ||
                 elements[i].tagName === "BUTTON"
             ) {
-                scale = 1.5;
+                choice = 1;
                 break;
             }
         }
-        api.start({ top: e.clientY, left: e.clientX, scale: scale });
+        api.start({
+            top: e.clientY,
+            left: e.clientX,
+            ...opt[choice],
+        });
     };
 
     useEffect(() => {
@@ -41,8 +56,8 @@ const Cursor = () => {
                 zIndex: 10000,
                 borderRadius: "50%",
                 transform: "translate(-25px,-25px)",
-                mixBlendMode: "difference",
                 pointerEvents: "none",
+                mixBlendMode: "difference",
                 ...styles,
             }}
         />
