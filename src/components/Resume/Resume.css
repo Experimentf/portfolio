@@ -1,0 +1,17 @@
+.resume {
+}
+
+.page {
+    max-width: 100vw;
+}
+
+.page canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+.page .react-pdf__Page__textContent {
+    user-select: none;
+}
+.resume .annotationLayer {
+    display: none;
+}
