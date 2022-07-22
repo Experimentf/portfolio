@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import FullHeight from "../Other/FullHeight";
 import Resume from "../Resume/Resume";
+import "./About.css";
 
 const About = (props) => {
     const theme = useTheme();
@@ -19,9 +20,22 @@ const About = (props) => {
         <FullHeight {...props}>
             <Grid container justifyContent="center">
                 <Grid item xs={12} sm={6}>
-                    <Typography variant="h1" align="left" color="text.primary">
-                        Hey!
-                    </Typography>
+                    <Grid container alignItems="center">
+                        <Grid item>
+                            <Typography
+                                variant="h1"
+                                align="left"
+                                color="text.primary"
+                            >
+                                Hey!
+                            </Typography>
+                        </Grid>
+                        <Grid item sx={{ p: 2 }}>
+                            <Typography variant="h4" className="wave">
+                                👋
+                            </Typography>
+                        </Grid>
+                    </Grid>
                     <Typography
                         color="text.secondary"
                         variant="h6"

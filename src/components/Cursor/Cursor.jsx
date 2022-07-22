@@ -25,10 +25,7 @@ const Cursor = () => {
         ];
         let choice = 0;
         for (let i = 0; i < elements.length; i++) {
-            if (
-                elements[i].tagName === "A" ||
-                elements[i].tagName === "BUTTON"
-            ) {
+            if (elements[i].classList.contains("cursor-active")) {
                 choice = 1;
                 break;
             }

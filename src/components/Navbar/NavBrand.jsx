@@ -4,6 +4,7 @@ import Spanner from "../Spanner/Spanner";
 const NavBrand = ({ href }) => {
     return (
         <Link
+            className="cursor-active"
             href={href}
             sx={(theme) => ({
                 textDecoration: "none",

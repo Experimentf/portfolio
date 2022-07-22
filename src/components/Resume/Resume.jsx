@@ -5,6 +5,7 @@ import {
     CircularProgress,
     Dialog,
     DialogActions,
+    DialogContent,
     IconButton,
     Modal,
     Paper,
@@ -48,26 +49,37 @@ const Resume = ({ title = "Resume" }) => {
                     "& .MuiDialog-container": {},
                 }}
             >
-                <Document
-                    className="resume"
-                    file={{ url: "/Resume/Resume.pdf" }}
-                    onLoadSuccess={onDocumentLoad}
-                    loading={<CircularProgress />}
+                <DialogContent
+                    sx={{
+                        overflow: "hidden",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                    }}
                 >
-                    {Array.from(new Array(pages)).map((e, idx) => (
-                        <Page key={idx} pageNumber={idx + 1} className="page" />
-                    ))}
-                </Document>
-                {pages && (
-                    <DialogActions>
+                    <Document
+                        className="resume"
+                        file={{ url: "/Resume/Resume.pdf" }}
+                        onLoadSuccess={onDocumentLoad}
+                        loading={<CircularProgress />}
+                    >
+                        {Array.from(new Array(pages)).map((e, idx) => (
+                            <Page
+                                key={idx}
+                                pageNumber={idx + 1}
+                                className="page"
+                            />
+                        ))}
+                    </Document>
+                    {pages && (
                         <Btn
                             title={"Download"}
                             startIcon={<Download />}
                             href="/Resume/Resume.pdf"
                             download={"Divyansh_Falodiya_Resume.pdf"}
                         />
-                    </DialogActions>
-                )}
+                    )}
+                </DialogContent>
             </Dialog>
         </>
     );

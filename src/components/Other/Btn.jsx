@@ -7,6 +7,7 @@ const Btn = ({ title, ...props }) => {
 
     return (
         <Button
+            className="cursor-active"
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
             sx={{ textTransform: "none", fontFamily: "Anton", mt: 5 }}

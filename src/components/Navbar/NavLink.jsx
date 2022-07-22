@@ -6,6 +6,7 @@ const NavLink = ({ href, title }) => {
     const [hover, setHover] = useState(false);
     return (
         <Link
+            className="cursor-active"
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
             href={href}

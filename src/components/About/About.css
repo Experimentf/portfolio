@@ -1,0 +1,22 @@
+.wave {
+    animation: wave-anim 2s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+    transform-origin: bottom right;
+}
+
+@keyframes wave-anim {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    75% {
+        transform: rotate(15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
