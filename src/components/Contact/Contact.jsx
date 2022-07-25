@@ -51,7 +51,13 @@ const Contact = (props) => {
                 sx={{ mt: 5 }}
             >
                 {socials.map(({ title, link, Icon }, idx) => (
-                    <Grid item key={idx} sx={{ p: 3 }}>
+                    <Grid
+                        item
+                        key={idx}
+                        sx={{ p: 3 }}
+                        data-aos="slide-up"
+                        data-aos-offset="120"
+                    >
                         <Link
                             href={link}
                             target="_blank"

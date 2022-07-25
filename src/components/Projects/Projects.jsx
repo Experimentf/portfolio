@@ -41,6 +41,9 @@ const Project = ({ data, idx }) => {
                 position: "relative",
                 overflow: "hidden",
             }}
+            data-aos="slide-up"
+            // data-aos={idx % 2 === 0 ? "slide-left" : "slide-right"}
+            data-aos-duration="1000"
         >
             <Grid container>
                 <Grid
@@ -120,6 +123,12 @@ const Project = ({ data, idx }) => {
                                     : { right: -15, transform: "rotate(45deg)" }
                             }
                         />
+                    )}
+                    {data.original && (
+                        <Typography variant="caption" sx={{ mt: 5 }}>
+                            (Inspired from{" "}
+                            <Link href={data.original}>skribbl.io</Link>)
+                        </Typography>
                     )}
                 </Grid>
             </Grid>

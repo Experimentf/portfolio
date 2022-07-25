@@ -67,6 +67,8 @@ const About = (props) => {
                             width: "100%",
                             maxWidth: 400,
                         }}
+                        data-aos="slide-up"
+                        data-aos-duration="1000"
                     />
                 </Grid>
                 <Grid item xs={12} sm={6}>

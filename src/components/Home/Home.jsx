@@ -1,11 +1,6 @@
-import {
-    Box,
-    SvgIcon,
-    Typography,
-    useMediaQuery,
-    useTheme,
-} from "@mui/material";
+import { SvgIcon, Typography, useMediaQuery, useTheme } from "@mui/material";
 import FullHeight from "../Other/FullHeight";
+import { animated, useSpring } from "@react-spring/web";
 
 const Home = (props) => {
     const theme = useTheme();
@@ -34,9 +29,12 @@ const Home = (props) => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    userSelect: "none",
                 }}
             >
-                こんにちは
+                {"こんにちは".split("").map((ch, idx) => (
+                    <Span ch={ch} idx={idx} key={idx} />
+                ))}
             </Typography>
             <SvgIcon
                 sx={{
@@ -45,6 +43,8 @@ const Home = (props) => {
                     zIndex: -1,
                 }}
                 viewBox="0 0 100 100"
+                data-aos="fade-in"
+                data-aos-duration="1000"
             >
                 <circle
                     cx={50}
@@ -54,6 +54,28 @@ const Home = (props) => {
                 />
             </SvgIcon>
         </FullHeight>
+    );
+};
+
+const Span = ({ ch, idx }) => {
+    const theme = useTheme();
+    const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
+    const { distance } = useSpring({
+        from: { distance: 0 },
+        to: { distance: 1 },
+        loop: { reverse: true },
+    });
+
+    return (
+        <animated.span
+            style={{
+                display: "block",
+            }}
+            data-aos="fade-in"
+            data-aos-duration="1000"
+        >
+            {ch}
+        </animated.span>
     );
 };
 

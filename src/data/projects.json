@@ -52,6 +52,7 @@
     },
     {
         "title": "Skribbl",
+        "original": "https://skribbl.io",
         "github": "https://github.com/DivyanshFalodiya/skribbl",
         "link": "https://divyanshfalodiya.github.io/skribbl/",
         "desc": "A web-based application for users to play pictionary along with other players in real-time.",

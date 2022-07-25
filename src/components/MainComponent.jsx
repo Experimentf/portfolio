@@ -9,7 +9,7 @@ import Projects from "./Projects/Projects";
 const MainComponent = () => {
     return (
         <>
-            <Container sx={{ minHeight: "100vh" }}>
+            <Container sx={{ minHeight: "100vh", overflow: "hidden" }}>
                 <Home id="home" />
                 <About id="about" sx={{ py: 15 }} />
                 <Divider />
