@@ -22,11 +22,18 @@ const Cursor = () => {
                 scale: 1.5,
                 background: theme.palette.primary.main,
             },
+            {
+                scale: 1.5,
+                background: theme.palette.text.primary,
+            },
         ];
         let choice = 0;
         for (let i = 0; i < elements.length; i++) {
             if (elements[i].classList.contains("cursor-active")) {
                 choice = 1;
+                break;
+            } else if (elements[i].classList.contains("cursor-active-2")) {
+                choice = 2;
                 break;
             }
         }

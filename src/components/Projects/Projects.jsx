@@ -25,6 +25,20 @@ const Projects = (props) => {
                     <Project data={pro} idx={idx} key={idx} />
                 ))}
             </Box>
+            <Typography
+                variant="p"
+                color="text.primary"
+                align="center"
+                sx={{ mt: 10, width: "100%", display: "block" }}
+            >
+                To view more of my projects, please visit my{" "}
+                <Link
+                    href="https://github.com/DivyanshFalodiya"
+                    target="_blank"
+                >
+                    Github
+                </Link>
+            </Typography>
         </FullHeight>
     );
 };
@@ -41,9 +55,8 @@ const Project = ({ data, idx }) => {
                 position: "relative",
                 overflow: "hidden",
             }}
-            data-aos="slide-up"
-            // data-aos={idx % 2 === 0 ? "slide-left" : "slide-right"}
-            data-aos-duration="1000"
+            data-aos="fade-in"
+            data-aos-once="false"
         >
             <Grid container>
                 <Grid
@@ -101,7 +114,13 @@ const Project = ({ data, idx }) => {
                         sx={{ mt: 5 }}
                     >
                         {data.tech.map((cls, idx) => (
-                            <Grid item key={idx} sx={{ m: 1 }}>
+                            <Grid
+                                item
+                                key={idx}
+                                sx={{ m: 1 }}
+                                data-aos="zoom-in"
+                                data-aos-once="false"
+                            >
                                 <Tooltip title={cls.split("-")[1]}>
                                     <i
                                         className={cls}

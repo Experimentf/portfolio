@@ -4,6 +4,7 @@ import Contact from "./Contact/Contact";
 import Home from "./Home/Home";
 import Navbar from "./Navbar/Navbar";
 import Projects from "./Projects/Projects";
+import Work from "./Work/Work";
 
 // Main
 const MainComponent = () => {
@@ -12,6 +13,8 @@ const MainComponent = () => {
             <Container sx={{ minHeight: "100vh", overflow: "hidden" }}>
                 <Home id="home" />
                 <About id="about" sx={{ py: 15 }} />
+                <Divider />
+                <Work id="work" sx={{ py: 15 }} />
                 <Divider />
                 <Projects id="projects" sx={{ py: 15 }} />
                 <Divider />

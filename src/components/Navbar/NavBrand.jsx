@@ -4,7 +4,7 @@ import Spanner from "../Spanner/Spanner";
 const NavBrand = ({ href }) => {
     return (
         <Link
-            className="cursor-active"
+            className="cursor-active-2"
             href={href}
             sx={(theme) => ({
                 textDecoration: "none",
@@ -12,7 +12,7 @@ const NavBrand = ({ href }) => {
             })}
         >
             <Typography fontFamily="Anton" variant="h2">
-                <Spanner text="df" />
+                <Spanner text="df" delay={100} />
             </Typography>
         </Link>
     );

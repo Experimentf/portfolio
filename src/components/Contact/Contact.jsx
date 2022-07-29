@@ -1,4 +1,4 @@
-import { GitHub, Instagram, LinkedIn, Mail } from "@mui/icons-material";
+import { GitHub, Instagram, LinkedIn, Mail, Phone } from "@mui/icons-material";
 import {
     Box,
     Grid,
@@ -14,6 +14,11 @@ const Contact = (props) => {
     const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
 
     const socials = [
+        // {
+        //     title: "+91 888-9521-804",
+        //     link: "tel:+918889521804",
+        //     Icon: Phone,
+        // },
         {
             title: "E-mail",
             link: "mailto:divyanshfofficial@gmail.com/",
@@ -42,7 +47,7 @@ const Contact = (props) => {
                 Contact
             </Typography>
             <Typography color="text.primary" align="center" sx={{ mt: 5 }}>
-                I would be glad to connect on any of the socials below 😄
+                I would be glad to get in touch via any of the ways below 😄
             </Typography>
             <Grid
                 container
@@ -55,14 +60,18 @@ const Contact = (props) => {
                         item
                         key={idx}
                         sx={{ p: 3 }}
-                        data-aos="slide-up"
-                        data-aos-offset="120"
+                        data-aos="zoom-in"
+                        data-aos-delay={idx * 50}
+                        data-aos-offset="-120"
                     >
                         <Link
                             href={link}
                             target="_blank"
                             sx={{
                                 textDecoration: "none",
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
                             }}
                         >
                             <Icon

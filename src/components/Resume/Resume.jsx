@@ -42,7 +42,6 @@ const Resume = ({ title = "Resume" }) => {
                     "& .MuiPaper-root": {
                         background: "transparent",
                         boxShadow: "none",
-                        m: 5,
                         maxWidth: "100%",
                         overflow: "hidden",
                     },
@@ -55,6 +54,7 @@ const Resume = ({ title = "Resume" }) => {
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
+                        p: 0,
                     }}
                 >
                     <Document
