@@ -3,6 +3,7 @@ import { useState } from "react";
 import Spanner from "../Spanner/Spanner";
 import isTouch from "../../helpers/isTouch";
 
+// Each nav-link
 const NavLink = ({
     href,
     title,

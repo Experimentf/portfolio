@@ -1,4 +1,4 @@
-import { GitHub, Instagram, LinkedIn, Mail, Phone } from "@mui/icons-material";
+import { GitHub, Instagram, LinkedIn, Mail } from "@mui/icons-material";
 import {
     Box,
     Grid,
@@ -7,7 +7,6 @@ import {
     useMediaQuery,
     useTheme,
 } from "@mui/material";
-import FullHeight from "../Other/FullHeight";
 
 const Contact = (props) => {
     const theme = useTheme();

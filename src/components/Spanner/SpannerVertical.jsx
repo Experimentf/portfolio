@@ -1,5 +1,6 @@
 import { animated, useTransition } from "@react-spring/web";
 
+// Vertical Spanner Animation
 const SpannerVertical = ({ text, hover }) => {
     return (
         <>
@@ -20,6 +21,7 @@ const SpannerVertical = ({ text, hover }) => {
     );
 };
 
+// Animated Component
 const Trans = ({ hover, ch, idx }) => {
     const transition = useTransition(hover, {
         from: { y: "-100%", y2: "100%" },

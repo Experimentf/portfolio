@@ -1,7 +1,8 @@
 import { useTheme } from "@mui/material";
-import { useSpring, animated, useTransition } from "@react-spring/web";
-import { useEffect, useState } from "react";
+import { useSpring, animated } from "@react-spring/web";
+import { useEffect } from "react";
 
+// Custom Cursor
 const Cursor = () => {
     const theme = useTheme();
     const [styles, api] = useSpring(() => ({
@@ -11,6 +12,8 @@ const Cursor = () => {
         background: theme.palette.text.primary,
         delay: 1000,
     }));
+
+    // On Mouse Move
     const handleMouseMove = (e) => {
         const elements = document.elementsFromPoint(e.clientX, e.clientY);
         let opt = [

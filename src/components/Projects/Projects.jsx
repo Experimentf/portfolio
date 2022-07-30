@@ -1,6 +1,5 @@
 import {
     Box,
-    Button,
     Card,
     CardMedia,
     Grid,
@@ -14,6 +13,7 @@ import FullHeight from "../Other/FullHeight";
 import projects from "../../data/projects.json";
 import { GitHub } from "@mui/icons-material";
 
+// All Projects
 const Projects = (props) => {
     return (
         <FullHeight {...props}>
@@ -43,6 +43,7 @@ const Projects = (props) => {
     );
 };
 
+// Each project item
 const Project = ({ data, idx }) => {
     const theme = useTheme();
     const isSmall = useMediaQuery(theme.breakpoints.down("sm"));

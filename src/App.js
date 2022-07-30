@@ -1,11 +1,11 @@
-import logo from "./logo.svg";
-import "./App.css";
 import { Box, createTheme, ThemeProvider } from "@mui/material";
 import MainComponent from "./components/MainComponent";
 import Cursor from "./components/Cursor/Cursor";
 import isTouch from "./helpers/isTouch";
 import AOS from "aos";
+import "./App.css";
 
+// Initialize AOS settings
 AOS.init({
     // Global settings:
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -27,7 +27,9 @@ AOS.init({
     anchorPlacement: "center", // defines which position of the element regarding to window should trigger the animation
 });
 
+// App
 function App() {
+    // Theme
     const theme = createTheme({
         palette: {
             mode: "dark",

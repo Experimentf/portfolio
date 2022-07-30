@@ -1,3 +1,4 @@
+// Check if the device pointer is touch type
 const isTouch = () => {
     return (
         "createTouch" in document ||

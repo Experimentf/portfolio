@@ -1,18 +1,7 @@
-import {
-    Box,
-    Card,
-    CardContent,
-    CardMedia,
-    Grid,
-    List,
-    ListItem,
-    Tooltip,
-    Typography,
-    useMediaQuery,
-    useTheme,
-} from "@mui/material";
+import { Box, Card, CardMedia, Grid, Tooltip, Typography } from "@mui/material";
 import works from "../../data/work.json";
 
+// Works
 const Work = ({ ...props }) => {
     return (
         <Box {...props}>
@@ -26,15 +15,13 @@ const Work = ({ ...props }) => {
     );
 };
 
+// Each work item
 const Item = ({ data, idx }) => {
-    const theme = useTheme();
-    const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
-
     return (
         <Card
             key={idx}
             sx={{
-                my: 5,
+                my: 10,
                 width: "100%",
                 position: "relative",
                 overflow: "hidden",

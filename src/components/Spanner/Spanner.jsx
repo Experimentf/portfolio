@@ -1,6 +1,6 @@
-import { useSpring, animated, useTransition } from "@react-spring/web";
-import { useState } from "react";
+import { animated, useTransition } from "@react-spring/web";
 
+// Horizontal Spanner Animation
 const Spanner = ({ text, hover = false, delay = 0, style = {} }) => {
     const transitions = useTransition(hover, {
         from: { x: "-100%", x1: "-100%" },
@@ -8,10 +8,6 @@ const Spanner = ({ text, hover = false, delay = 0, style = {} }) => {
         leave: { x: "100%", x1: "100%" },
         delay: delay,
         config: { duration: 500 },
-    });
-    const { x } = useSpring({
-        from: { x: "-100%" },
-        to: { x: "0" },
     });
 
     return (
