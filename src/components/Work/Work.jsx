@@ -1,4 +1,12 @@
-import { Box, Card, CardMedia, Grid, Tooltip, Typography } from "@mui/material";
+import {
+    alpha,
+    Box,
+    Card,
+    CardMedia,
+    Grid,
+    Tooltip,
+    Typography,
+} from "@mui/material";
 import works from "../../data/work.json";
 
 // Works
@@ -20,12 +28,13 @@ const Item = ({ data, idx }) => {
     return (
         <Card
             key={idx}
-            sx={{
+            sx={(theme) => ({
                 my: 10,
                 width: "100%",
                 position: "relative",
                 overflow: "hidden",
-            }}
+                background: alpha(theme.palette.common.black, 0.5),
+            })}
             data-aos="fade-in"
             data-aos-once="false"
         >

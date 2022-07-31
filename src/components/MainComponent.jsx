@@ -38,3 +38,9 @@ const MainComponent = () => {
 };
 
 export default MainComponent;
+
+// home - 255, 0, 0
+// about - 138, 14, 76
+// work - 92, 21, 18
+// projects - 149, 242, 192
+// contact - 86, 43, 86

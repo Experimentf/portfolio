@@ -1,4 +1,5 @@
 import {
+    alpha,
     Box,
     Card,
     CardMedia,
@@ -50,12 +51,13 @@ const Project = ({ data, idx }) => {
     return (
         <Card
             key={idx}
-            sx={{
+            sx={(theme) => ({
                 my: 5,
                 width: "100%",
                 position: "relative",
                 overflow: "hidden",
-            }}
+                background: alpha(theme.palette.common.black, 0.5),
+            })}
             data-aos="fade-in"
             data-aos-once="false"
         >

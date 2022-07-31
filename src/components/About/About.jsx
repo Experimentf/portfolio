@@ -1,4 +1,13 @@
-import { Grid, Link, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+    alpha,
+    CardMedia,
+    Grid,
+    Link,
+    Typography,
+    useMediaQuery,
+    useTheme,
+} from "@mui/material";
+import { yellow } from "@mui/material/colors";
 import FullHeight from "../Other/FullHeight";
 import Resume from "../Resume/Resume";
 import "./About.css";
@@ -6,13 +15,21 @@ import "./About.css";
 const About = (props) => {
     return (
         <FullHeight {...props}>
-            <Grid container justifyContent="center">
+            <Grid
+                container
+                justifyContent="center"
+                sx={(theme) => ({
+                    // background: alpha(theme.palette.common.black, 0.5),
+                    borderRadius: 2,
+                })}
+            >
                 <Grid
                     item
                     xs={12}
                     sm={6}
                     data-aos="fade-in"
                     data-aos-offset="120"
+                    sx={{ p: 3 }}
                 >
                     <Grid container alignItems="center">
                         <Grid item>
@@ -31,16 +48,20 @@ const About = (props) => {
                         </Grid>
                     </Grid>
                     <Typography
-                        color="text.disabled"
+                        color="text.secondary"
                         variant="h6"
-                        sx={{ mt: 5 }}
+                        sx={(theme) => ({
+                            mt: 5,
+                        })}
                     >
                         I am{" "}
                         <Typography
                             variant="span"
-                            sx={(theme) => ({
-                                color: theme.palette.text.primary,
-                            })}
+                            color="text.primary"
+                            sx={{
+                                mixBlendMode: "difference",
+                                px: 2,
+                            }}
                         >
                             Divyansh Falodiya
                         </Typography>
@@ -57,17 +78,18 @@ const About = (props) => {
                         justifyContent: "center",
                         alignItems: "center",
                         my: 2,
+                        p: 3,
                     }}
                     data-aos="zoom-in"
                     data-aos-offset="120"
                 >
-                    <img
-                        src="/images/me2.jpg"
-                        alt="Divyansh Falodiya"
-                        style={{
+                    <CardMedia
+                        image="/images/me2.jpg"
+                        sx={{
                             borderRadius: "50%",
-                            width: "100%",
-                            maxWidth: 300,
+                            width: 300,
+                            height: 300,
+                            backgroundBlendMode: "multiply",
                         }}
                     />
                 </Grid>
@@ -77,27 +99,49 @@ const About = (props) => {
                     sm={6}
                     data-aos="fade-in"
                     data-aos-offset="120"
+                    sx={{ p: 3 }}
                 >
-                    <Typography color="text.disabled" variant="h6">
+                    <Typography color="text.secondary" variant="h6">
                         With a keen interest in developing products, I have
                         invested much of my time understanding and working with
                         technologies involving the{" "}
-                        <Typography variant="span" color="primary">
+                        <Typography
+                            variant="span"
+                            color="text.primary"
+                            sx={(theme) => ({
+                                mixBlendMode: "difference",
+                                px: 1,
+                            })}
+                        >
                             Web
                         </Typography>
                         .
                     </Typography>
                     <Typography
-                        color="text.disabled"
+                        color="text.secondary"
                         variant="h6"
                         sx={{ mt: 2 }}
                     >
                         I have worked not only on the Web but also on{" "}
-                        <Typography variant="span" color="primary">
+                        <Typography
+                            variant="span"
+                            color="text.primary"
+                            sx={(theme) => ({
+                                mixBlendMode: "difference",
+                                px: 1,
+                            })}
+                        >
                             Native Android Development
                         </Typography>{" "}
                         using Kotlin as well as{" "}
-                        <Typography variant="span" color="primary">
+                        <Typography
+                            variant="span"
+                            color="text.primary"
+                            sx={(theme) => ({
+                                mixBlendMode: "difference",
+                                px: 1,
+                            })}
+                        >
                             Machine Learning
                         </Typography>{" "}
                         for quite some time.
