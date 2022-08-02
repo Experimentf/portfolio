@@ -55,7 +55,8 @@ const Navbar = () => {
             position="fixed"
             elevation={elevation}
             sx={(theme) => ({
-                background: alpha(theme.palette.background.paper, 0.5),
+                background: "transparent",
+                // background: alpha(theme.palette.background.paper, 0.5),
                 backdropFilter: "blur(10px)",
             })}
         >

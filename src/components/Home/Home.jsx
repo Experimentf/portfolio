@@ -7,26 +7,34 @@ const Home = ({ pages, ...props }) => {
     const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
     const mnRad = isSmall ? 40 : 30;
     const colors = [
-        { r: 255, g: 0, b: 0 },
-        { r: 0, g: 65, b: 130 },
+        { r: 18, g: 18, b: 18 },
+        { r: 0, g: 18, b: 25 },
+        { r: 18, g: 0, b: 18 },
+        { r: 0, g: 0, b: 18 },
     ];
-    const [color, setColor] = useState(colors[0]);
     const [rad, setRad] = useState(mnRad);
 
     const handleScroll = () => {
-        const val = window.scrollY / document.body.scrollHeight;
-        setRad(Math.min(mnRad + window.scrollY / 5, 500));
-        let newr = colors[0].r + (colors[1].r - colors[0].r) * val;
-        let newg = colors[0].g + (colors[1].g - colors[0].g) * val;
-        let newb = colors[0].b + (colors[1].b - colors[0].b) * val;
-        setColor({
-            r: Math.round(newr),
-            g: Math.round(newg),
-            b: Math.round(newb),
-        });
+        const offset =
+            window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        const cur = offset * (colors.length - 1);
+        const prev = Math.floor(cur);
+        const next = Math.ceil(cur);
+
+        // setRad(Math.min(mnRad + window.scrollY / 5, 500));
+        let newr =
+            colors[prev].r + (colors[next].r - colors[prev].r) * (cur - prev);
+        let newg =
+            colors[prev].g + (colors[next].g - colors[prev].g) * (cur - prev);
+        let newb =
+            colors[prev].b + (colors[next].b - colors[prev].b) * (cur - prev);
+        document.body.style.backgroundColor = `rgb(${Math.round(
+            newr
+        )}, ${Math.round(newg)}, ${Math.round(newb)})`;
     };
 
     useEffect(() => {
+        document.body.style.backgroundColor = `rgb(${colors[0].r}, ${colors[0].g}, ${colors[0].b})`;
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
@@ -59,7 +67,7 @@ const Home = ({ pages, ...props }) => {
             </Typography>
             <SvgIcon
                 sx={{
-                    position: "fixed",
+                    position: "absolute",
                     top: "50%",
                     transform: "translateY(-50%)",
                     width: "100vw",
@@ -74,7 +82,7 @@ const Home = ({ pages, ...props }) => {
                     r={rad}
                     style={{
                         stroke: "none",
-                        fill: `rgb(${color.r},${color.g},${color.b})`,
+                        fill: "red",
                     }}
                 />
             </SvgIcon>

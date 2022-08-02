@@ -58,10 +58,11 @@ const About = (props) => {
                         <Typography
                             variant="span"
                             color="text.primary"
-                            sx={{
-                                mixBlendMode: "difference",
-                                px: 2,
-                            }}
+                            sx={(theme) => ({
+                                background: `linear-gradient(to right, transparent, rgba(255,255,0,0.2), transparent)`,
+                                px: 1,
+                                py: 0.5,
+                            })}
                         >
                             Divyansh Falodiya
                         </Typography>
@@ -109,8 +110,9 @@ const About = (props) => {
                             variant="span"
                             color="text.primary"
                             sx={(theme) => ({
-                                mixBlendMode: "difference",
+                                background: `linear-gradient(to right, transparent, rgba(0,255,255,0.2), transparent)`,
                                 px: 1,
+                                py: 0.5,
                             })}
                         >
                             Web
@@ -127,19 +129,21 @@ const About = (props) => {
                             variant="span"
                             color="text.primary"
                             sx={(theme) => ({
-                                mixBlendMode: "difference",
+                                background: `linear-gradient(to right, transparent, rgba(0,255,255,0.2), transparent)`,
                                 px: 1,
+                                py: 0.5,
                             })}
                         >
                             Native Android Development
                         </Typography>{" "}
-                        using Kotlin as well as{" "}
+                        as well as{" "}
                         <Typography
                             variant="span"
                             color="text.primary"
                             sx={(theme) => ({
-                                mixBlendMode: "difference",
+                                background: `linear-gradient(to right, transparent, rgba(0,255,255,0.2), transparent)`,
                                 px: 1,
+                                py: 0.5,
                             })}
                         >
                             Machine Learning

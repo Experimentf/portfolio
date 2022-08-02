@@ -4,6 +4,7 @@ import Cursor from "./components/Cursor/Cursor";
 import isTouch from "./helpers/isTouch";
 import AOS from "aos";
 import "./App.css";
+import { useEffect } from "react";
 
 // Initialize AOS settings
 AOS.init({
@@ -38,18 +39,6 @@ function App() {
 
     return (
         <ThemeProvider theme={theme}>
-            <Box
-                height="100vh"
-                width="100vw"
-                position="fixed"
-                sx={{
-                    zIndex: -100,
-                    top: 0,
-                    left: 0,
-                    background: theme.palette.background.default,
-                    pointerEvents: "none",
-                }}
-            />
             {!isTouch() && <Cursor />}
             <MainComponent />
         </ThemeProvider>
