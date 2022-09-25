@@ -30,7 +30,7 @@ const Contact = (props) => {
         },
         {
             title: "Github",
-            link: "https://github.com/DivyanshFalodiya/",
+            link: "https://github.com/divyanshf/",
             Icon: GitHub,
         },
         {
