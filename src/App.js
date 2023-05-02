@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import { Canvas } from '@react-three/fiber';
-import { CameraControls } from '@react-three/drei';
+import { CameraControls, ScrollControls } from '@react-three/drei';
+import Room from './components/Elements/Room';
 
 function App() {
     return (
@@ -9,11 +10,13 @@ function App() {
             style={{
                 width: '100vw',
                 height: '100vh',
-                background: '#171717',
             }}
         >
-            <ambientLight />
-            <CameraControls />
+            <ScrollControls pages={3} damping={0.1}>
+                <ambientLight />
+                <CameraControls />
+                <Room />
+            </ScrollControls>
         </Canvas>
     );
 }
