@@ -33,10 +33,7 @@ const Projects = (props) => {
                 sx={{ mt: 10, width: "100%", display: "block" }}
             >
                 To view more of my projects, please visit my{" "}
-                <Link
-                    href="https://github.com/DivyanshFalodiya"
-                    target="_blank"
-                >
+                <Link href="https://github.com/divyanshf" target="_blank">
                     Github
                 </Link>
             </Typography>

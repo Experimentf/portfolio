@@ -28,7 +28,7 @@ const NavLink = ({
             onClick={handleClose}
         >
             <Typography
-                fontFamily="Anton"
+                // fontFamily="Anton"
                 fontSize="1rem"
                 sx={{ width: "100%", ...sx }}
             >
