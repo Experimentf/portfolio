@@ -68,6 +68,7 @@ const Item = ({ data, idx }) => {
                             sx={{ m: 1 }}
                             data-aos="zoom-in"
                             data-aos-once="false"
+                            data-aos-delay={idx * 50}
                         >
                             <Tooltip title={cls.split("-")[1]}>
                                 <i
