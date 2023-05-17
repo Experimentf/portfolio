@@ -1,73 +1,63 @@
-import { useTheme } from "@mui/material";
-import { useSpring, animated } from "@react-spring/web";
-import { useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
+import { ThemeContext, styled } from "styled-components";
+import useMouseMovement from "../../hooks/useMouseMovement";
+import { gsap } from "gsap";
 
-// Custom Cursor
+const StyledSVG = styled.svg`
+    position: fixed;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 10;
+`;
+
+const reactiveClasses = [
+    "react-to-cursor-text",
+    "react-to-cursor-element",
+    "react-to-cursor-svg",
+    "react-to-cursor-hide-cursor",
+    "react-high-scale",
+];
+
 const Cursor = () => {
-    const theme = useTheme();
-    const [styles, api] = useSpring(() => ({
-        top: 0,
-        left: 0,
-        scale: 1,
-        background: theme.palette.text.primary,
-        delay: 1000,
-    }));
-
-    // On Mouse Move
-    const handleMouseMove = (e) => {
-        const elements = document.elementsFromPoint(e.clientX, e.clientY);
-        let opt = [
-            {
-                scale: 1,
-                background: theme.palette.text.primary,
-            },
-            {
-                scale: 1.5,
-                background: theme.palette.primary.main,
-            },
-            {
-                scale: 1.5,
-                background: theme.palette.text.primary,
-            },
-        ];
-        let choice = 0;
-        for (let i = 0; i < elements.length; i++) {
-            if (elements[i].classList.contains("cursor-active")) {
-                choice = 1;
-                break;
-            } else if (elements[i].classList.contains("cursor-active-2")) {
-                choice = 2;
-                break;
-            }
-        }
-        api.start({
-            top: e.clientY,
-            left: e.clientX,
-            ...opt[choice],
-        });
-    };
+    const theme = useContext(ThemeContext);
+    const cursorRef = useRef();
+    const { x, y } = useMouseMovement();
 
     useEffect(() => {
-        window.addEventListener("mousemove", handleMouseMove);
-        return () => window.removeEventListener("mousemove", handleMouseMove);
-    }, []);
+        const handleScale = () => {
+            const hoveredElements = document.elementsFromPoint(x, y);
+            const reactiveElement = hoveredElements.find(
+                (element) =>
+                    element.classList.contains(reactiveClasses[0]) ||
+                    element.classList.contains(reactiveClasses[1]) ||
+                    element.classList.contains(reactiveClasses[2]) ||
+                    element.classList.contains(reactiveClasses[3]) ||
+                    element.classList.contains(reactiveClasses[4])
+            );
+            if (!reactiveElement) return 1;
+            if (
+                reactiveElement.classList.contains(
+                    "react-to-cursor-hide-cursor"
+                )
+            )
+                return 0;
+            if (reactiveElement.classList.contains("react-high-scale"))
+                return 10;
+            return 1.5;
+        };
+
+        gsap.to(cursorRef.current, {
+            x: x - 25,
+            y: y - 25,
+            scale: handleScale(),
+            duration: 0.5,
+        });
+    }, [x, y]);
 
     return (
-        <animated.div
-            id="cursor"
-            style={{
-                position: "fixed",
-                width: "50px",
-                height: "50px",
-                background: theme.palette.text.primary,
-                zIndex: 10000,
-                borderRadius: "50%",
-                transform: "translate(-25px,-25px)",
-                pointerEvents: "none",
-                mixBlendMode: "difference",
-                ...styles,
-            }}
-        />
+        <StyledSVG ref={cursorRef} width={50} height={50}>
+            <circle r={15} cx={25} cy={25} fill={theme.primary} />
+        </StyledSVG>
     );
 };
 

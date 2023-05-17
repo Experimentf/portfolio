@@ -1,7 +1,7 @@
 [
     {
         "title": "Plag",
-        "github": "https://github.com/DivyanshFalodiya/plagiarism-detector",
+        "github": "https://github.com/divyanshf/plagiarism-detector",
         "link": "https://github.com/divyanshf/plagiarism-detector/releases/tag/v2.0/",
         "desc": "A plagiarism detection system for source code files that are written in C++ or Java.",
         "tech": ["devicon-python-plain colored"],
