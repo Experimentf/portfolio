@@ -19,9 +19,12 @@
     color: var(--secondary);
 }
 
+html {
+    background-color: var(--background);
+}
+
 body {
     color: var(--main);
-    background-color: var(--background);
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -31,6 +34,21 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 33px;
 }
 
 /* Templated Paddings and Margins */
