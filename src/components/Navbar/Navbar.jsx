@@ -6,7 +6,7 @@ import Links from "./Links/Links";
 const Navbar = () => {
     return (
         <>
-            <Brand className="m-30 react-to-cursor-text" />
+            <Brand className="react-to-cursor-text" />
             <Socials className="m-30 hide-on-mobile" />
             <Links className="m-30" />
         </>

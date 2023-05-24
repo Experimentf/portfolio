@@ -83,6 +83,7 @@ const Project = ({ data, idx }) => {
                 position: "relative",
                 overflow: "hidden",
                 background: "rgba(0,0,0,0.2)",
+                backdropFilter: "blur(8px)",
                 borderRadius: 10,
             }}
         >

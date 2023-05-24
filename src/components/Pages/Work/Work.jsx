@@ -11,6 +11,7 @@ const Card = styled.div`
     border-radius: 10px;
     padding: 20px;
     background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
     @media (max-width: 800px) {
         grid-column: 1 / span 3;
     }

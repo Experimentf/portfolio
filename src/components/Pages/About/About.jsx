@@ -73,7 +73,7 @@ const About = (props) => {
                     >
                         <div className="info-container">
                             <GraduateIcon
-                                fill={theme.primary}
+                                fill={theme.main}
                                 width={25}
                                 height={25}
                             />
@@ -87,7 +87,7 @@ const About = (props) => {
                         <div className="info-container">
                             <h1 className="content">IIIT Gwalior '23</h1>
                             <BuildingIcon
-                                fill={theme.primary}
+                                fill={theme.main}
                                 width={25}
                                 height={25}
                             />
@@ -99,7 +99,7 @@ const About = (props) => {
                     >
                         <div className="info-container">
                             <LaptopIcon
-                                fill={theme.primary}
+                                fill={theme.main}
                                 width={25}
                                 height={25}
                             />
@@ -113,7 +113,7 @@ const About = (props) => {
                         <div className="info-container">
                             <h1 className="content">India</h1>
                             <LocationIcon
-                                fill={theme.primary}
+                                fill={theme.main}
                                 width={25}
                                 height={25}
                             />

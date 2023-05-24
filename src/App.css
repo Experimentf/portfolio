@@ -4,7 +4,7 @@
 
 .react-to-cursor-text {
     color: var(--main);
-    transition: 0.5s ease;
+    transition: color 0.5s ease;
 }
 
 .react-to-cursor-text:hover {
@@ -49,7 +49,7 @@
 }
 
 .scifi-container .content {
-    color: var(--primary);
+    color: var(--main);
 }
 
 .info-container {
@@ -60,7 +60,7 @@
 }
 
 .information {
-    backdrop-filter: blur(8px);
+    /* backdrop-filter: blur(8px); */
     display: flex;
     flex-direction: column;
 }
