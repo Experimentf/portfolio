@@ -77,6 +77,31 @@
     pointer-events: none;
 }
 
+.tooltip {
+    position: relative;
+}
+
+.tooltip:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip::after {
+    transition: 0.3s ease;
+    visibility: hidden;
+    opacity: 0;
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--disabled-main);
+    color: var(--primary);
+    padding: 6px;
+    font-size: 0.8rem;
+    border-radius: 10px;
+}
+
 @media screen and (max-width: 800px) {
     .flex {
         flex-direction: column;
