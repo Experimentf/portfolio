@@ -5,15 +5,26 @@ import { ThemeContext, styled } from "styled-components";
 import { ReactComponent as CalendarIcon } from "./Calendar.svg";
 import Project from "./Project";
 
+const CardContainer = styled.div`
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    @media (max-width: 800px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+`;
+
 const Card = styled.div`
-    maxwidth: 300px;
+    max-width: 300px;
     overflow: hidden;
     border-radius: 10px;
     padding: 20px;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(8px);
     @media (max-width: 800px) {
-        grid-column: 1 / span 3;
+        width: 100%;
+        margin: auto;
     }
 `;
 
@@ -23,20 +34,17 @@ const Work = ({ ...props }) => {
 
     return (
         <section id="work" {...props}>
-            <div>
+            <div
+                style={{
+                    width: "100%",
+                }}
+            >
                 <h1 style={{ color: theme.main }}>Works</h1>
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(3, 1fr)",
-                        gap: 20,
-                    }}
-                    className="mt-20"
-                >
+                <CardContainer className="mt-20">
                     {jobs.map((work, idx) => (
                         <Item data={work} idx={idx} key={idx} />
                     ))}
-                </div>
+                </CardContainer>
             </div>
             <div className="mt-50">
                 <h1 style={{ color: theme.main }}>Projects</h1>
@@ -76,6 +84,11 @@ const Work = ({ ...props }) => {
 const Item = ({ data, idx }) => {
     const theme = useContext(ThemeContext);
 
+    const getTip = (className) => {
+        const name = className.split(" ")[0].split("-")[1];
+        return name;
+    };
+
     return (
         <Card key={idx}>
             <div className="p-5">
@@ -114,7 +127,8 @@ const Item = ({ data, idx }) => {
                     {data.tech.map((cls, idx) => (
                         <div
                             key={idx}
-                            className="m-10"
+                            className="m-10 tooltip"
+                            data-tooltip={getTip(cls)}
                             style={{ display: "inline-block" }}
                         >
                             <i

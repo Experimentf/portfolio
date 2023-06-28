@@ -73,6 +73,11 @@ const VisitLink = styled.a`
 const Project = ({ data, idx }) => {
     const theme = useContext(ThemeContext);
 
+    const getTip = (className) => {
+        const name = className.split(" ")[0].split("-")[1];
+        return name;
+    };
+
     return (
         <div
             key={idx}
@@ -102,7 +107,8 @@ const Project = ({ data, idx }) => {
                         {data.tech.map((cls, idx) => (
                             <div
                                 key={idx}
-                                className="m-10"
+                                className="m-10 tooltip"
+                                data-tooltip={getTip(cls)}
                                 style={{ display: "inline-block" }}
                             >
                                 <i

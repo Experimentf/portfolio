@@ -12,7 +12,7 @@ const StyledSocials = styled.div`
     gap: 30px;
     bottom: 0;
     color: ${(props) => props.color};
-    @media (max-width: 768px) {
+    @media (max-width: 800px) {
         display: none;
     }
 `;
