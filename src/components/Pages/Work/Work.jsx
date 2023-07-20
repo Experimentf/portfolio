@@ -9,7 +9,7 @@ const CardContainer = styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 50px;
     @media (max-width: 800px) {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -34,11 +34,7 @@ const Work = ({ ...props }) => {
 
     return (
         <section id="work" {...props}>
-            <div
-                style={{
-                    width: "100%",
-                }}
-            >
+            <div style={{}}>
                 <h1 style={{ color: theme.main }}>Works</h1>
                 <CardContainer className="mt-20">
                     {jobs.map((work, idx) => (
