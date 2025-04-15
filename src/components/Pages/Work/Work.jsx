@@ -12,6 +12,7 @@ const CardContainer = styled.div`
     gap: 50px;
     justify-content: center;
     @media (min-width: 800px) {
+        width: 100%;
         flex-direction: row;
         flex-wrap: wrap;
     }
@@ -30,25 +31,29 @@ const Card = styled.div`
     }
 `;
 
+const SectionInnerContainer = styled.div`
+    width: 100%;
+`;
+
+const Section = styled.section`
+    padding: 50px;
+`;
+
 // jobs
 const Work = ({ ...props }) => {
     const theme = useContext(ThemeContext);
 
     return (
-        <section id="work" {...props}>
-            <div
-                style={{
-                    width: "100%",
-                }}
-            >
+        <Section id="work" {...props}>
+            <SectionInnerContainer>
                 <h1 style={{ color: theme.main }}>Career</h1>
                 <CardContainer className="mt-20">
                     {jobs.map((work, idx) => (
                         <Item data={work} idx={idx} key={idx} />
                     ))}
                 </CardContainer>
-            </div>
-            <div className="mt-50">
+            </SectionInnerContainer>
+            <SectionInnerContainer className="mt-50">
                 <h1 style={{ color: theme.main }}>Projects</h1>
                 <div>
                     {projects.map((project, idx) => (
@@ -77,8 +82,8 @@ const Work = ({ ...props }) => {
                         Github
                     </a>
                 </p>
-            </div>
-        </section>
+            </SectionInnerContainer>
+        </Section>
     );
 };
 

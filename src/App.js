@@ -58,9 +58,9 @@ function Main() {
                 <div className="faded" />
                 <Navbar />
                 <Waves />
-                <main>
+                <main className="main">
                     <About className="page-container" />
-                    <Work className="page-container p-50 mb-50" />
+                    <Work className="page-container mb-50" />
                     <Contact className="full-height page-container p-50" />
                 </main>
             </div>

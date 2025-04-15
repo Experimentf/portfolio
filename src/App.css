@@ -2,6 +2,11 @@
     min-height: 100vh;
 }
 
+.main {
+    max-width: 1320px;
+    margin: auto;
+}
+
 .react-to-cursor-text {
     color: var(--main);
     transition: color 0.5s ease;
