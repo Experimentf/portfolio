@@ -1,6 +1,21 @@
 [
     {
-        "title": "Software Developer",
+        "title": "Software Engineer",
+        "type": "Full Time",
+        "tech": [
+            "devicon-react-original colored",
+            "devicon-typescript-original colored",
+            "devicon-jest-plain colored",
+            "devicon-nextjs-original",
+            "devicon-go-plain colored"
+        ],
+        "desc": "Helped develop various web frontend projects and enhancements for Mercari users in Japan.",
+        "logo": "/mercari.png",
+        "company": "Mercari Japan",
+        "duration": "Oct 2023 - Present"
+    },
+    {
+        "title": "Software Engineer",
         "type": "Internship",
         "tech": [
             "devicon-react-original colored",

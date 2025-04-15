@@ -7,24 +7,26 @@ import Project from "./Project";
 
 const CardContainer = styled.div`
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 50px;
-    @media (max-width: 800px) {
-        grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    @media (min-width: 800px) {
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 `;
 
 const Card = styled.div`
-    max-width: 300px;
+    width: 300px;
     overflow: hidden;
     border-radius: 10px;
     padding: 20px;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(8px);
     @media (max-width: 800px) {
-        width: 100%;
-        margin: auto;
+        align-self: ${(props) =>
+            props.$position % 2 === 0 ? "flex-start" : "flex-end"};
     }
 `;
 
@@ -34,8 +36,12 @@ const Work = ({ ...props }) => {
 
     return (
         <section id="work" {...props}>
-            <div style={{}}>
-                <h1 style={{ color: theme.main }}>Works</h1>
+            <div
+                style={{
+                    width: "100%",
+                }}
+            >
+                <h1 style={{ color: theme.main }}>Career</h1>
                 <CardContainer className="mt-20">
                     {jobs.map((work, idx) => (
                         <Item data={work} idx={idx} key={idx} />
@@ -86,7 +92,7 @@ const Item = ({ data, idx }) => {
     };
 
     return (
-        <Card key={idx}>
+        <Card key={idx} $position={idx}>
             <div className="p-5">
                 <div
                     style={{ display: "flex", alignItems: "flex-start" }}

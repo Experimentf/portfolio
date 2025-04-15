@@ -49,7 +49,7 @@ const About = (props) => {
             >
                 <div className="mb-20">
                     <img
-                        src="/images/me3.JPG"
+                        src="/images/divyanshf.png"
                         alt="Divyansh Falodiya"
                         className="react-to-cursor-hide-cursor"
                         style={{
