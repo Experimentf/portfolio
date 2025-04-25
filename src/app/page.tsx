@@ -1,7 +1,12 @@
+import { LoadingSpinner } from "@/components/Loading/LoadingSpinner";
+
 export default function Home() {
   return (
-    <div>
-      <h1>Divyansh Falodiya</h1>
+    <div className='w-screen h-screen'>
+      <LoadingSpinner
+        size={50}
+        title='Please wait while the starts align themselves . . .'
+      />
     </div>
   );
 }
