@@ -1,3 +1,9 @@
+type ProjectLink = {
+  label: string;
+  href: string;
+  icon: string;
+};
+
 type Project = {
   index: string;
   year: string;
@@ -6,42 +12,124 @@ type Project = {
   description: string;
   accent: "primary" | "secondary";
   icon: string;
+  links: ProjectLink[];
 };
 
 const projects: Project[] = [
   {
     index: "01",
-    year: "2024",
-    title: "Nexus Core Platform",
-    category: "Systems Architecture",
+    year: "Realtime",
+    title: "Doodle",
+    category: "Realtime Multiplayer",
     description:
-      "Redefining distributed state management through a monolithic UI structure. Nexus introduced a novel approach to client-side data orchestration within highly complex enterprise dashboards.",
+      "A full-stack realtime pictionary game in React, Node.js, and WebSockets. Built session management, user matching, and synchronized game state from scratch — and offloaded image processing onto Web Workers for a snappy UI. Containerized with Docker and deployed to Google Cloud Run.",
     accent: "primary",
-    icon: "hub",
+    icon: "brush",
+    links: [
+      {
+        label: "Live",
+        href: "https://doodle.experimentf.com/",
+        icon: "launch",
+      },
+      {
+        label: "Frontend",
+        href: "https://github.com/Experimentf/doodle-client",
+        icon: "code",
+      },
+      {
+        label: "Backend",
+        href: "https://github.com/Experimentf/doodle-server",
+        icon: "dns",
+      },
+    ],
   },
   {
     index: "02",
-    year: "2024",
-    title: "Prism Diagnostics",
-    category: "WebGL Interactions",
+    year: "Hackathon Winner",
+    title: "11 Bugs",
+    category: "Developer Tools",
     description:
-      "Real-time spectral visualizations rendered directly in the browser using custom GLSL shaders — diagnostics that feel physical.",
+      "A unified developer dashboard that aggregates stats from GitHub, CodeChef, and Codeforces, backed by a custom MongoDB-driven ranking algorithm. Built fullstack and took 1st of 50+ teams at Hackrocket '22.",
     accent: "secondary",
-    icon: "stacked_line_chart",
+    icon: "dashboard_customize",
+    links: [
+      {
+        label: "Live",
+        href: "https://bugmenot.onrender.com/",
+        icon: "launch",
+      },
+      {
+        label: "Code",
+        href: "https://github.com/divyanshf/11BUGS_1",
+        icon: "code",
+      },
+    ],
   },
   {
     index: "03",
-    year: "2023",
-    title: "Omni Tracker",
-    category: "Data Visualization",
+    year: "Most Starred",
+    title: "Noter",
+    category: "Mobile · Android",
     description:
-      "An adaptive analytics canvas: telemetry, geo-streams, and event timelines stitched into a single immersive operator console.",
+      "A Google Keep–inspired notes app for Android — material design, color-coded notes, and Firebase sync. Built in Kotlin; the most-starred repo on my GitHub.",
     accent: "primary",
-    icon: "radar",
+    icon: "sticky_note_2",
+    links: [
+      {
+        label: "Code",
+        href: "https://github.com/divyanshf/noter-android",
+        icon: "code",
+      },
+    ],
+  },
+  {
+    index: "04",
+    year: "Information Retrieval",
+    title: "Plagiarism Detector",
+    category: "Algorithms · CLI",
+    description:
+      "A CLI for detecting plagiarism across source-code files, built on latent semantic analysis and bespoke information-retrieval techniques. Python end-to-end.",
+    accent: "secondary",
+    icon: "fingerprint",
+    links: [
+      {
+        label: "Code",
+        href: "https://github.com/divyanshf/plagiarism-detector",
+        icon: "code",
+      },
+    ],
+  },
+  {
+    index: "05",
+    year: "Side Quest",
+    title: "Nihongo",
+    category: "Language · Web App",
+    description:
+      "A small web app I built to drill Japanese kana and vocabulary while settling into Tokyo. Light, fast, deployed to Netlify — and quietly useful on my morning commute.",
+    accent: "primary",
+    icon: "translate",
+    links: [
+      {
+        label: "Live",
+        href: "https://go-nihongo.netlify.app/",
+        icon: "launch",
+      },
+      {
+        label: "Code",
+        href: "https://github.com/divyanshf/nihongo",
+        icon: "code",
+      },
+    ],
   },
 ];
 
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({
+  project,
+  className,
+}: {
+  project: Project;
+  className?: string;
+}) => {
   const accent = project.accent;
   const accentBg =
     accent === "primary" ? "from-primary/30" : "from-secondary/30";
@@ -55,11 +143,16 @@ const ProjectCard = ({ project }: { project: Project }) => {
       : "hover:shadow-[0_0_60px_-20px_rgba(235,178,255,0.5)]";
   const accentIcon = accent === "primary" ? "text-primary" : "text-secondary";
 
+  const cardClass = `group relative flex flex-col h-full overflow-hidden rounded-xl bg-surface-container-lowest/70 backdrop-blur-md border ${accentBorder} ${accentShadow} transition-all duration-500 hover:-translate-y-2 ${className ?? ""}`;
+
+  const chipBase =
+    accent === "primary"
+      ? "border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/60"
+      : "border-secondary/30 text-secondary hover:bg-secondary/10 hover:border-secondary/60";
+
   return (
-    <article
-      className={`group relative overflow-hidden rounded-xl bg-surface-container-lowest/70 backdrop-blur-md border ${accentBorder} ${accentShadow} transition-all duration-500 hover:-translate-y-2`}
-    >
-      <div className='relative aspect-[16/10] w-full overflow-hidden'>
+    <article className={cardClass}>
+      <div className='relative aspect-[16/10] w-full overflow-hidden shrink-0'>
         <div
           className={`absolute inset-0 bg-gradient-to-br ${accentBg} via-surface-container-low/40 to-surface-container-lowest`}
         />
@@ -80,39 +173,42 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </div>
       </div>
 
-      <div className='glass-panel p-6 md:p-7 border-0 rounded-none'>
-        <div className='flex justify-between items-start gap-4'>
-          <div>
-            <span
-              className={`inline-block font-[family-name:var(--font-mono)] text-[10px] tracking-[0.22em] uppercase px-3 py-1 rounded-full ${
-                accent === "primary"
-                  ? "bg-primary/10 border border-primary/30 text-primary"
-                  : "bg-secondary/10 border border-secondary/30 text-secondary"
-              } mb-3`}
-            >
-              {project.category}
-            </span>
-            <h3 className='font-[family-name:var(--font-headline)] text-2xl md:text-3xl font-semibold tracking-tight'>
-              {project.title}
-            </h3>
-          </div>
-          <button
-            type='button'
-            aria-label='Open project'
-            className={`shrink-0 w-11 h-11 rounded-full border ${
-              accent === "primary"
-                ? "border-primary/40 text-primary hover:bg-primary/10"
-                : "border-secondary/40 text-secondary hover:bg-secondary/10"
-            } flex items-center justify-center transition-all duration-300 group-hover:rotate-[-45deg]`}
-          >
-            <span className='material-symbols-outlined text-[20px]'>
-              arrow_forward
-            </span>
-          </button>
-        </div>
-        <p className='mt-4 font-[family-name:var(--font-body)] text-[15px] leading-[1.65] text-on-surface-variant'>
+      <div className='glass-panel p-6 md:p-7 border-0 rounded-none flex-1 flex flex-col'>
+        <span
+          className={`inline-block self-start font-[family-name:var(--font-mono)] text-[10px] tracking-[0.22em] uppercase px-3 py-1 rounded-full ${
+            accent === "primary"
+              ? "bg-primary/10 border border-primary/30 text-primary"
+              : "bg-secondary/10 border border-secondary/30 text-secondary"
+          } mb-3`}
+        >
+          {project.category}
+        </span>
+        <h3 className='font-[family-name:var(--font-headline)] text-2xl md:text-3xl font-semibold tracking-tight'>
+          {project.title}
+        </h3>
+        <p className='mt-4 font-[family-name:var(--font-body)] text-[15px] leading-[1.65] text-on-surface-variant flex-1'>
           {project.description}
         </p>
+
+        <div className='mt-6 flex flex-wrap gap-2'>
+          {project.links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target='_blank'
+              rel='noreferrer noopener'
+              className={`inline-flex items-center gap-2 font-[family-name:var(--font-mono)] text-[11px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full border bg-surface-container-lowest/40 backdrop-blur-sm transition-all duration-300 active:scale-95 ${chipBase}`}
+            >
+              <span className='material-symbols-outlined text-[14px]'>
+                {link.icon}
+              </span>
+              {link.label}
+              <span className='material-symbols-outlined text-[14px] opacity-60'>
+                arrow_outward
+              </span>
+            </a>
+          ))}
+        </div>
       </div>
     </article>
   );
@@ -129,35 +225,32 @@ export const ProjectsSection = () => {
           <div className='flex items-center gap-3 mb-4'>
             <div className='h-px w-10 bg-primary' />
             <span className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase text-primary'>
-              Curated Works
+              Side Quests
             </span>
           </div>
           <h2 className='font-[family-name:var(--font-headline)] text-[44px] md:text-[72px] font-bold leading-[1.05] tracking-[-0.04em] mb-6'>
-            Engineering /{" "}
-            <span className='text-surface-variant'>The Void.</span>
+            Built off /{" "}
+            <span className='text-surface-variant'>the clock.</span>
           </h2>
           <p className='font-[family-name:var(--font-body)] text-[16px] leading-[1.65] text-on-surface-variant'>
-            A selection of high-fidelity digital experiences and technical
-            explorations. Prioritizing architectural integrity, immersive depth,
-            and experimental interactions.
+            A small archive of projects I&rsquo;ve shipped beyond the day job —
+            from real-time game backends to hackathon-winning developer tools.
           </p>
         </header>
 
-        <div className='grid grid-cols-1 md:grid-cols-12 gap-y-20 md:gap-y-28 md:gap-x-6'>
-          <div className='md:col-span-8'>
-            <ProjectCard project={projects[0]} />
-          </div>
-          <div className='md:col-span-5 md:col-start-8 md:-mt-16'>
-            <ProjectCard project={projects[1]} />
-          </div>
-          <div className='md:col-span-7 md:col-start-1'>
-            <ProjectCard project={projects[2]} />
-          </div>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch'>
+          <ProjectCard project={projects[0]} className='md:col-span-2' />
+          <ProjectCard project={projects[1]} />
+          <ProjectCard project={projects[2]} />
+          <ProjectCard project={projects[3]} />
+          <ProjectCard project={projects[4]} />
         </div>
 
         <div className='mt-24 flex justify-center'>
-          <button
-            type='button'
+          <a
+            href='https://github.com/divyanshf'
+            target='_blank'
+            rel='noreferrer noopener'
             className='relative inline-flex items-center gap-3 font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase px-8 py-4 rounded-full bg-primary text-on-primary btn-primary-glow transition-all duration-300 active:scale-95'
           >
             <span
@@ -165,12 +258,12 @@ export const ProjectsSection = () => {
               className='absolute inset-0 rounded-full bg-primary blur-2xl opacity-40'
             />
             <span className='relative flex items-center gap-3'>
-              View Archive
+              More on GitHub
               <span className='material-symbols-outlined text-[18px]'>
-                arrow_forward
+                arrow_outward
               </span>
             </span>
-          </button>
+          </a>
         </div>
       </div>
     </section>

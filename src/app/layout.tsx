@@ -24,9 +24,15 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VOID.LABS — Divyansh Falodiya",
+  title: "Divyansh Falodiya — Software Engineer",
   description:
-    "Immersive 3D portfolio of Divyansh Falodiya — crafting futuristic WebGL environments and digital artifacts at the edge of spatial interaction.",
+    "Personal portfolio of Divyansh Falodiya. Software engineer currently building at Mercari. Crafting immersive web experiences, WebGL environments, and digital artifacts at the seam of logic and spatial design.",
+  openGraph: {
+    title: "Divyansh Falodiya — Software Engineer",
+    description:
+      "Personal portfolio of Divyansh Falodiya. Software engineer crafting immersive web experiences and WebGL environments.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

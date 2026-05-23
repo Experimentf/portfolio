@@ -1,20 +1,29 @@
+import { Logo } from "./Logo";
+
 const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com" },
-  { label: "GitHub", href: "https://github.com" },
-  { label: "Twitter", href: "https://twitter.com" },
-  { label: "Email", href: "mailto:hello@void.labs" },
+  { label: "GitHub", href: "https://github.com/divyanshf" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/divyanshf/" },
+  { label: "LeetCode", href: "https://leetcode.com/divyanshf" },
+  { label: "Email", href: "mailto:divyanshfofficial@gmail.com" },
 ] as const;
 
 export const Footer = () => {
   return (
     <footer className='w-full py-12 bg-surface-container-lowest border-t border-outline-variant/20 relative z-10'>
       <div className='max-w-[var(--container-max)] mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)] flex flex-col md:flex-row justify-between items-center gap-4'>
-        <div className='flex flex-col items-center md:items-start gap-2'>
-          <span className='font-[family-name:var(--font-mono)] text-[14px] text-primary tracking-widest opacity-80'>
-            VOID.LABS
-          </span>
-          <p className='font-[family-name:var(--font-body)] text-[12px] text-on-tertiary-container tracking-wider uppercase'>
-            © 2024 Designed in the Void. All rights reserved.
+        <div className='flex flex-col items-center md:items-start gap-3'>
+          <div className='flex items-center gap-3'>
+            <Logo
+              size={24}
+              className='text-primary drop-shadow-[0_0_10px_rgba(0,219,233,0.45)]'
+            />
+            <span className='font-[family-name:var(--font-mono)] text-[12px] text-primary tracking-[0.32em] uppercase opacity-90'>
+              Divyansh · Falodiya
+            </span>
+          </div>
+          <p className='font-[family-name:var(--font-body)] text-[11px] text-on-tertiary-container tracking-wider uppercase'>
+            © {new Date().getFullYear()} Divyansh Falodiya. Designed in the
+            Void.
           </p>
         </div>
         <ul className='flex flex-wrap justify-center gap-6'>

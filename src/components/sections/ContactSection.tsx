@@ -2,20 +2,20 @@ const networkNodes = [
   {
     icon: "public",
     label: "GitHub",
-    caption: "// Repositories & Open Source",
-    href: "https://github.com",
+    caption: "// github.com/divyanshf",
+    href: "https://github.com/divyanshf",
   },
   {
     icon: "work",
     label: "LinkedIn",
-    caption: "// Professional History",
-    href: "https://linkedin.com",
+    caption: "// linkedin.com/in/divyanshf",
+    href: "https://www.linkedin.com/in/divyanshf/",
   },
   {
-    icon: "alternate_email",
-    label: "Twitter / X",
-    caption: "// Thoughts & Micro-logs",
-    href: "https://twitter.com",
+    icon: "terminal",
+    label: "LeetCode",
+    caption: "// 500+ problems solved",
+    href: "https://leetcode.com/divyanshf",
   },
 ];
 
@@ -132,10 +132,18 @@ export const ContactSection = () => {
               <div className='glass-panel rounded-lg p-5 space-y-3'>
                 <div className='flex items-center gap-3'>
                   <span className='material-symbols-outlined text-primary text-[20px]'>
+                    badge
+                  </span>
+                  <span className='font-[family-name:var(--font-body)] text-[14px] text-on-surface-variant'>
+                    Software Engineer II @ Mercari
+                  </span>
+                </div>
+                <div className='flex items-center gap-3'>
+                  <span className='material-symbols-outlined text-primary text-[20px]'>
                     location_on
                   </span>
                   <span className='font-[family-name:var(--font-body)] text-[14px] text-on-surface-variant'>
-                    Sector 7G, The Grid (Remote Earth)
+                    Tokyo, Japan
                   </span>
                 </div>
                 <div className='flex items-center gap-3'>
@@ -143,8 +151,19 @@ export const ContactSection = () => {
                     schedule
                   </span>
                   <span className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.14em] uppercase text-on-surface-variant'>
-                    UTC -05:00 // Standard Operating Hours
+                    JST +09:00 // Standard Operating Hours
                   </span>
+                </div>
+                <div className='flex items-center gap-3'>
+                  <span className='material-symbols-outlined text-primary text-[20px]'>
+                    alternate_email
+                  </span>
+                  <a
+                    href='mailto:divyanshfofficial@gmail.com'
+                    className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.08em] text-on-surface-variant hover:text-primary transition-colors break-all'
+                  >
+                    divyanshfofficial@gmail.com
+                  </a>
                 </div>
               </div>
             </div>

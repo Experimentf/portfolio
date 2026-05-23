@@ -11,28 +11,28 @@ const skills: Skill[] = [
   {
     index: "01",
     icon: "code_blocks",
-    title: "Core Architecture",
+    title: "Frontend at Scale",
     description:
-      "Building robust, scalable foundations using modern frameworks and typed languages.",
-    tags: ["React", "TypeScript", "Next.js"],
+      "Shipping marketplace-scale React and Next.js experiences in TypeScript — typed, performance-tuned, and tested end-to-end.",
+    tags: ["React", "Next.js", "TypeScript", "GraphQL", "Storybook"],
     accent: "primary",
   },
   {
     index: "02",
-    icon: "view_in_ar",
-    title: "Immersive Web",
+    icon: "dns",
+    title: "Backend & Real-Time",
     description:
-      "Crafting 3D experiences and high-performance canvas rendering directly in the browser.",
-    tags: ["Three.js", "WebGL", "GLSL"],
+      "Real-time features wired through WebSockets, Go and Node.js microservices, MongoDB, and Docker-containerized deployments.",
+    tags: ["Go", "Node.js", "WebSockets", "MongoDB", "Docker"],
     accent: "secondary",
   },
   {
     index: "03",
-    icon: "design_services",
-    title: "Design Systems",
+    icon: "polyline",
+    title: "Craft & Foundations",
     description:
-      "Bridging design and engineering with tokenized architectures and flawless UI translation.",
-    tags: ["Figma", "Tailwind CSS", "Framer Motion"],
+      "Algorithms, system design, and the discipline of well-tested, performant code. 500+ LeetCode solved; CI/CD in muscle memory.",
+    tags: ["DSA", "System Design", "Web Performance", "Jest / Vitest", "CI/CD"],
     accent: "primary",
   },
 ];

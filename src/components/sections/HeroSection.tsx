@@ -4,24 +4,32 @@ export const HeroSection = () => {
       id='home'
       className='relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden pt-20 scroll-mt-20'
     >
-      <div className='relative z-10 flex flex-col items-center text-center px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)] max-w-4xl'>
+      <div className='relative z-10 flex flex-col items-center text-center px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)] max-w-5xl'>
         <div className='inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-secondary/10 border border-secondary/30 backdrop-blur-md'>
           <span className='w-2 h-2 rounded-full bg-secondary animate-pulse shadow-[0_0_8px_rgba(235,178,255,0.8)]' />
           <span className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.18em] uppercase text-secondary'>
-            Early-Career Innovator
+            Currently building @ Mercari
           </span>
         </div>
 
-        <h1 className='font-[family-name:var(--font-headline)] text-[48px] md:text-[80px] font-bold leading-[1.05] tracking-[-0.04em] mb-6 drop-shadow-[0_0_30px_rgba(255,255,255,0.06)]'>
-          BUILDING IN
-          <br />
-          <span className='text-gradient-animate'>THE VOID</span>
+        <h1 className='font-[family-name:var(--font-headline)] text-[44px] sm:text-[64px] md:text-[88px] font-bold leading-[0.98] tracking-[-0.045em] mb-6 drop-shadow-[0_0_30px_rgba(255,255,255,0.06)]'>
+          <span className='block'>DIVYANSH</span>
+          <span className='block text-gradient-animate'>FALODIYA</span>
         </h1>
 
-        <p className='font-[family-name:var(--font-body)] text-[16px] leading-[1.6] text-on-surface-variant max-w-2xl mb-12 drop-shadow-md'>
-          Bridging the gap between pure logic and immersive design. Crafting
-          futuristic WebGL environments and digital artifacts that push the
-          boundaries of spatial interaction and front-end architecture.
+        <div className='flex items-center gap-3 mb-8'>
+          <span className='h-px w-10 bg-primary/60' />
+          <span className='font-[family-name:var(--font-mono)] text-[11px] md:text-[12px] tracking-[0.32em] uppercase text-on-surface-variant'>
+            // Building in the Void
+          </span>
+          <span className='h-px w-10 bg-primary/60' />
+        </div>
+
+        <p className='font-[family-name:var(--font-body)] text-[16px] md:text-[17px] leading-[1.65] text-on-surface-variant max-w-2xl mb-12 drop-shadow-md'>
+          Software engineer shipping marketplace-scale frontends at Mercari for
+          20M+ users. I live at the seam of typed systems, performance, and the
+          web&rsquo;s more immersive frontier — and I&rsquo;m happiest when
+          something real ships.
         </p>
 
         <div className='flex flex-col sm:flex-row gap-4 w-full sm:w-auto'>
