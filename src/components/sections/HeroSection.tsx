@@ -1,4 +1,7 @@
-export const HeroSection = () => {
+import { getTranslations } from "next-intl/server";
+
+export const HeroSection = async () => {
+  const t = await getTranslations("hero");
   return (
     <section
       id='home'
@@ -8,7 +11,7 @@ export const HeroSection = () => {
         <div className='inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-secondary/10 border border-secondary/30 backdrop-blur-md'>
           <span className='w-2 h-2 rounded-full bg-secondary animate-pulse shadow-[0_0_8px_rgba(235,178,255,0.8)]' />
           <span className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.18em] uppercase text-secondary'>
-            Currently building @ Mercari
+            {t("badge")}
           </span>
         </div>
 
@@ -20,26 +23,23 @@ export const HeroSection = () => {
         <div className='flex items-center gap-3 mb-8'>
           <span className='h-px w-10 bg-primary/60' />
           <span className='font-[family-name:var(--font-mono)] text-[11px] md:text-[12px] tracking-[0.32em] uppercase text-on-surface-variant'>
-            // Building in the Void
+            {t("tagline")}
           </span>
           <span className='h-px w-10 bg-primary/60' />
         </div>
 
         <p className='font-[family-name:var(--font-body)] text-[16px] md:text-[17px] leading-[1.65] text-on-surface-variant max-w-2xl drop-shadow-md'>
-          Software engineer shipping marketplace-scale frontends at Mercari for
-          20M+ users. I live at the seam of typed systems, performance, and the
-          web&rsquo;s more immersive frontier — and I&rsquo;m happiest when
-          something real ships.
+          {t("bio")}
         </p>
       </div>
 
       <a
         href='#journey'
-        aria-label='Scroll to journey'
+        aria-label={t("scrollLabel")}
         className='absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 opacity-80 hover:opacity-100 transition-opacity duration-300'
       >
         <span className='font-[family-name:var(--font-mono)] text-[10px] tracking-[0.22em] uppercase text-on-surface-variant'>
-          Scroll to explore
+          {t("scrollLabel")}
         </span>
         <div className='w-6 h-10 border border-outline-variant rounded-full flex justify-center p-1 backdrop-blur-sm'>
           <div className='w-1 h-2 bg-primary rounded-full animate-scroll-dot shadow-[0_0_8px_rgba(0,219,233,0.9)]' />

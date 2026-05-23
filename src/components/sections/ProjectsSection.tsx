@@ -1,3 +1,5 @@
+import { getTranslations } from "next-intl/server";
+
 type ProjectLink = {
   label: string;
   href: string;
@@ -14,114 +16,6 @@ type Project = {
   icon: string;
   links: ProjectLink[];
 };
-
-const projects: Project[] = [
-  {
-    index: "01",
-    year: "Realtime",
-    title: "Doodle",
-    category: "Realtime Multiplayer",
-    description:
-      "A full-stack realtime pictionary game in React, Node.js, and WebSockets. Built session management, user matching, and synchronized game state from scratch — and offloaded image processing onto Web Workers for a snappy UI. Containerized with Docker and deployed to Google Cloud Run.",
-    accent: "primary",
-    icon: "brush",
-    links: [
-      {
-        label: "Live",
-        href: "https://doodle.experimentf.com/",
-        icon: "launch",
-      },
-      {
-        label: "Frontend",
-        href: "https://github.com/Experimentf/doodle-client",
-        icon: "code",
-      },
-      {
-        label: "Backend",
-        href: "https://github.com/Experimentf/doodle-server",
-        icon: "dns",
-      },
-    ],
-  },
-  {
-    index: "02",
-    year: "Hackathon Winner",
-    title: "11 Bugs",
-    category: "Developer Tools",
-    description:
-      "A unified developer dashboard that aggregates stats from GitHub, CodeChef, and Codeforces, backed by a custom MongoDB-driven ranking algorithm. Built fullstack and took 1st of 50+ teams at Hackrocket '22.",
-    accent: "secondary",
-    icon: "dashboard_customize",
-    links: [
-      {
-        label: "Live",
-        href: "https://bugmenot.onrender.com/",
-        icon: "launch",
-      },
-      {
-        label: "Code",
-        href: "https://github.com/divyanshf/11BUGS_1",
-        icon: "code",
-      },
-    ],
-  },
-  {
-    index: "03",
-    year: "Most Starred",
-    title: "Noter",
-    category: "Mobile · Android",
-    description:
-      "A Google Keep–inspired notes app for Android — material design, color-coded notes, and Firebase sync. Built in Kotlin; the most-starred repo on my GitHub.",
-    accent: "primary",
-    icon: "sticky_note_2",
-    links: [
-      {
-        label: "Code",
-        href: "https://github.com/divyanshf/noter-android",
-        icon: "code",
-      },
-    ],
-  },
-  {
-    index: "04",
-    year: "Information Retrieval",
-    title: "Plagiarism Detector",
-    category: "Algorithms · CLI",
-    description:
-      "A CLI for detecting plagiarism across source-code files, built on latent semantic analysis and bespoke information-retrieval techniques. Python end-to-end.",
-    accent: "secondary",
-    icon: "fingerprint",
-    links: [
-      {
-        label: "Code",
-        href: "https://github.com/divyanshf/plagiarism-detector",
-        icon: "code",
-      },
-    ],
-  },
-  {
-    index: "05",
-    year: "Side Quest",
-    title: "Nihongo",
-    category: "Language · Web App",
-    description:
-      "A small web app I built to drill Japanese kana and vocabulary while settling into Tokyo. Light, fast, deployed to Netlify — and quietly useful on my morning commute.",
-    accent: "primary",
-    icon: "translate",
-    links: [
-      {
-        label: "Live",
-        href: "https://go-nihongo.netlify.app/",
-        icon: "launch",
-      },
-      {
-        label: "Code",
-        href: "https://github.com/divyanshf/nihongo",
-        icon: "code",
-      },
-    ],
-  },
-];
 
 const ProjectCard = ({
   project,
@@ -152,7 +46,7 @@ const ProjectCard = ({
       : "border-secondary/30 text-secondary hover:bg-secondary/10 hover:border-secondary/60";
 
   return (
-    <article className={cardClass} >
+    <article className={cardClass}>
       <div className='relative aspect-[16/10] w-full overflow-hidden shrink-0'>
         <div
           className={`absolute inset-0 bg-gradient-to-br ${accentBg} via-surface-container-low/40 to-surface-container-lowest`}
@@ -215,7 +109,12 @@ const ProjectCard = ({
   );
 };
 
-export const ProjectsSection = () => {
+export const ProjectsSection = async () => {
+  const t = await getTranslations("projects");
+  const projects = t.raw("items") as Project[];
+  const titleStart = t("titleStart");
+  const titleHighlight = t("titleHighlight");
+
   return (
     <section
       id='projects'
@@ -226,16 +125,15 @@ export const ProjectsSection = () => {
           <div className='flex items-center gap-3 mb-4'>
             <div className='h-px w-10 bg-primary' />
             <span className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase text-primary'>
-              Side Quests
+              {t("kicker")}
             </span>
           </div>
           <h2 className='font-[family-name:var(--font-headline)] text-[44px] md:text-[72px] font-bold leading-[1.05] tracking-[-0.04em] mb-6'>
-            Built off /{" "}
-            <span className='text-surface-variant'>the clock.</span>
+            {titleStart}{" "}
+            <span className='text-surface-variant'>{titleHighlight}</span>
           </h2>
           <p className='font-[family-name:var(--font-body)] text-[16px] leading-[1.65] text-on-surface-variant'>
-            A small archive of projects I&rsquo;ve shipped beyond the day job —
-            from real-time game backends to hackathon-winning developer tools.
+            {t("description")}
           </p>
         </header>
 
@@ -257,7 +155,7 @@ export const ProjectsSection = () => {
               className='absolute inset-0 rounded-full bg-primary blur-2xl opacity-40'
             />
             <span className='relative flex items-center gap-3'>
-              More on GitHub
+              {t("moreOnGithub")}
               <span className='material-symbols-outlined text-[18px]'>
                 arrow_outward
               </span>

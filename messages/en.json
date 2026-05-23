@@ -1,0 +1,206 @@
+{
+  "nav": {
+    "homeAriaLabel": "Divyansh Falodiya — Home",
+    "links": {
+      "journey": "Journey",
+      "projects": "Projects",
+      "expertise": "Expertise",
+      "contact": "Contact"
+    },
+    "resume": "Resume",
+    "languageLabel": "日本語"
+  },
+  "hero": {
+    "badge": "Currently building @ Mercari",
+    "tagline": "// Building in the Void",
+    "bio": "Software engineer shipping marketplace-scale frontends at Mercari for 20M+ users. I live at the seam of typed systems, performance, and the web's more immersive frontier — and I'm happiest when something real ships.",
+    "scrollLabel": "Scroll to explore"
+  },
+  "journey": {
+    "kicker": "// Career Log",
+    "titleStart": "The",
+    "titleHighlight": "Journey",
+    "description": "Tracing the path of continuous learning, professional growth, and technological exploration. From academic foundations to full-time engineering.",
+    "entries": [
+      {
+        "date": "Jan 2026 — Present",
+        "kicker": "Current Role",
+        "title": "Software Engineer II (MG3)",
+        "org": "Mercari, Inc. · Tokyo",
+        "body": "Co-leading a new AI-native web application from architecture to production — owning 50%+ of the frontend codebase. Leveraging AI tooling (MCPs, Claude skills) to accelerate development by 50%+, and driving monorepo-wide architectural updates for multi-application support. Mentoring new-grad engineers from onboarding through self-sufficiency.",
+        "accent": "secondary",
+        "tags": ["AI-Native", "Next.js", "Architecture", "Mentorship"]
+      },
+      {
+        "date": "Oct 2023 — Dec 2025",
+        "kicker": "Promoted MG1 → MG2",
+        "title": "Software Engineer I",
+        "org": "Mercari, Inc. · Tokyo",
+        "body": "Led 10+ marketplace seller features in Next.js and TypeScript for 20M+ users; drove a 30% uplift in job applications across Mercari Hallo. Redesigned complex seller flows with Jotai to slash re-renders, and engineered an AI-powered Slack workflow to automate the migration from legacy Context. Supported Go microservices to unblock cross-functional full-stack work.",
+        "accent": "primary",
+        "tags": ["Next.js", "TypeScript", "Go", "Jotai"]
+      },
+      {
+        "date": "Jan 2023 — Apr 2023",
+        "kicker": "Where it started",
+        "title": "Software Engineer Intern",
+        "org": "Mercari, Inc. · Tokyo",
+        "body": "Delivered 3+ production features in React and TypeScript 50% faster than the estimated timeline. Contributed to the web-wide migration from Gatsby to Next.js.",
+        "accent": "secondary",
+        "tags": ["React", "TypeScript", "Migration"]
+      },
+      {
+        "date": "May 2023",
+        "kicker": "University Graduation",
+        "title": "B.Tech. Computer Science",
+        "org": "IIIT Gwalior",
+        "body": "Graduated from the Indian Institute of Information Technology, Gwalior. Coursework across data structures, algorithms, OOP, databases, operating systems, and software engineering — and a steady habit of competitive programming on the side.",
+        "accent": "primary",
+        "tags": ["Algorithms", "Systems", "C++"]
+      },
+      {
+        "date": "Oct 2021 — Jan 2022",
+        "kicker": "First Internship",
+        "title": "Fullstack Developer Intern",
+        "org": "Shopout · Remote",
+        "body": "Built a live-stream platform on Agora SDK and Firebase serving 300+ users. Improved invoice-generation APIs with Node.js and MongoDB, automating client-side PDF creation.",
+        "accent": "secondary",
+        "tags": ["Node.js", "Firebase", "MongoDB"]
+      }
+    ]
+  },
+  "projects": {
+    "kicker": "Side Quests",
+    "titleStart": "Built off /",
+    "titleHighlight": "the clock.",
+    "description": "A small archive of projects I've shipped beyond the day job — from real-time game backends to hackathon-winning developer tools.",
+    "moreOnGithub": "More on GitHub",
+    "items": [
+      {
+        "index": "01",
+        "year": "Realtime",
+        "title": "Doodle",
+        "category": "Realtime Multiplayer",
+        "description": "A full-stack realtime pictionary game in React, Node.js, and WebSockets. Built session management, user matching, and synchronized game state from scratch — and offloaded image processing onto Web Workers for a snappy UI. Containerized with Docker and deployed to Google Cloud Run.",
+        "accent": "primary",
+        "icon": "brush",
+        "links": [
+          { "label": "Live", "href": "https://doodle.experimentf.com/", "icon": "launch" },
+          { "label": "Frontend", "href": "https://github.com/Experimentf/doodle-client", "icon": "code" },
+          { "label": "Backend", "href": "https://github.com/Experimentf/doodle-server", "icon": "dns" }
+        ]
+      },
+      {
+        "index": "02",
+        "year": "Hackathon Winner",
+        "title": "11 Bugs",
+        "category": "Developer Tools",
+        "description": "A unified developer dashboard that aggregates stats from GitHub, CodeChef, and Codeforces, backed by a custom MongoDB-driven ranking algorithm. Built fullstack and took 1st of 50+ teams at Hackrocket '22.",
+        "accent": "secondary",
+        "icon": "dashboard_customize",
+        "links": [
+          { "label": "Live", "href": "https://bugmenot.onrender.com/", "icon": "launch" },
+          { "label": "Code", "href": "https://github.com/divyanshf/11BUGS_1", "icon": "code" }
+        ]
+      },
+      {
+        "index": "03",
+        "year": "Most Starred",
+        "title": "Noter",
+        "category": "Mobile · Android",
+        "description": "A Google Keep–inspired notes app for Android — material design, color-coded notes, and Firebase sync. Built in Kotlin; the most-starred repo on my GitHub.",
+        "accent": "primary",
+        "icon": "sticky_note_2",
+        "links": [
+          { "label": "Code", "href": "https://github.com/divyanshf/noter-android", "icon": "code" }
+        ]
+      },
+      {
+        "index": "04",
+        "year": "Information Retrieval",
+        "title": "Plagiarism Detector",
+        "category": "Algorithms · CLI",
+        "description": "A CLI for detecting plagiarism across source-code files, built on latent semantic analysis and bespoke information-retrieval techniques. Python end-to-end.",
+        "accent": "secondary",
+        "icon": "fingerprint",
+        "links": [
+          { "label": "Code", "href": "https://github.com/divyanshf/plagiarism-detector", "icon": "code" }
+        ]
+      },
+      {
+        "index": "05",
+        "year": "Side Quest",
+        "title": "Nihongo",
+        "category": "Language · Web App",
+        "description": "A small web app I built to drill Japanese kana and vocabulary while settling into Tokyo. Light, fast, deployed to Netlify — and quietly useful on my morning commute.",
+        "accent": "primary",
+        "icon": "translate",
+        "links": [
+          { "label": "Live", "href": "https://go-nihongo.netlify.app/", "icon": "launch" },
+          { "label": "Code", "href": "https://github.com/divyanshf/nihongo", "icon": "code" }
+        ]
+      }
+    ]
+  },
+  "expertise": {
+    "kicker": "// Expertise Vectors",
+    "titleStart": "Technical",
+    "titleHighlight": "Arsenal",
+    "description": "A toolset honed across systems engineering, immersive rendering, and design-system architecture — calibrated for high-fidelity output.",
+    "skills": [
+      {
+        "index": "01",
+        "icon": "code_blocks",
+        "title": "Frontend at Scale",
+        "description": "Shipping marketplace-scale React and Next.js experiences in TypeScript — typed, performance-tuned, and tested end-to-end.",
+        "tags": ["React", "Next.js", "TypeScript", "GraphQL", "Storybook"],
+        "accent": "primary"
+      },
+      {
+        "index": "02",
+        "icon": "dns",
+        "title": "Backend & Real-Time",
+        "description": "Real-time features wired through WebSockets, Go and Node.js microservices, MongoDB, and Docker-containerized deployments.",
+        "tags": ["Go", "Node.js", "WebSockets", "MongoDB", "Docker"],
+        "accent": "secondary"
+      },
+      {
+        "index": "03",
+        "icon": "polyline",
+        "title": "Craft & Foundations",
+        "description": "Algorithms, system design, and the discipline of well-tested, performant code. 500+ LeetCode solved; CI/CD in muscle memory.",
+        "tags": ["DSA", "System Design", "Web Performance", "Jest / Vitest", "CI/CD"],
+        "accent": "primary"
+      }
+    ]
+  },
+  "contact": {
+    "kicker": "// Initiate Connection",
+    "titleStart": "Open a",
+    "titleHighlight": "Channel",
+    "description": "Direct line for collaborations, commissions, or quiet conversations about the future of the web.",
+    "form": {
+      "systemReady": "> System ready. Awaiting input...",
+      "transmissionReceived": "> Transmission received. Standing by.",
+      "success": "Message transmitted successfully.",
+      "nameLabel": "Identifier [Name]",
+      "namePlaceholder": "Enter your designation",
+      "emailLabel": "Comm Link [Email]",
+      "emailPlaceholder": "user@domain.com",
+      "messageLabel": "Payload [Message]",
+      "messagePlaceholder": "Transmit your request here...",
+      "submit": "Transmit Data",
+      "transmitting": "Transmitting...",
+      "errorRequired": "All fields are required.",
+      "errorGeneric": "Something went wrong. Try again.",
+      "errorNetwork": "Network error. Check your connection and try again."
+    },
+    "networkNodesTitle": "// Network Nodes",
+    "coordinatesTitle": "// Direct Coordinates",
+    "location": "Tokyo, Japan",
+    "timezone": "JST +09:00 // Standard Operating Hours"
+  },
+  "footer": {
+    "tagline": "Designed in the Void."
+  }
+}

@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Logo } from "./Logo";
 
 const socials = [
@@ -6,7 +7,8 @@ const socials = [
   { label: "Email", href: "mailto:divyanshfofficial@gmail.com" },
 ] as const;
 
-export const Footer = () => {
+export const Footer = async () => {
+  const t = await getTranslations("footer");
   return (
     <footer className='w-full py-12 bg-background/25 backdrop-blur-md backdrop-saturate-150 border-t border-white/5 shadow-[0px_-1px_20px_rgba(0,219,233,0.05)] relative z-10'>
       <div className='max-w-[var(--container-max)] mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)] flex flex-col md:flex-row justify-between items-center gap-4'>
@@ -21,8 +23,7 @@ export const Footer = () => {
             </span>
           </div>
           <p className='font-[family-name:var(--font-body)] text-[11px] text-on-tertiary-container tracking-wider uppercase'>
-            © {new Date().getFullYear()} Divyansh Falodiya. Designed in the
-            Void.
+            © {new Date().getFullYear()} Divyansh Falodiya. {t("tagline")}
           </p>
         </div>
         <ul className='flex flex-wrap justify-center gap-6'>

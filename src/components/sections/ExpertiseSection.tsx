@@ -1,3 +1,5 @@
+import { getTranslations } from "next-intl/server";
+
 type Skill = {
   index: string;
   icon: string;
@@ -7,37 +9,12 @@ type Skill = {
   accent: "primary" | "secondary";
 };
 
-const skills: Skill[] = [
-  {
-    index: "01",
-    icon: "code_blocks",
-    title: "Frontend at Scale",
-    description:
-      "Shipping marketplace-scale React and Next.js experiences in TypeScript — typed, performance-tuned, and tested end-to-end.",
-    tags: ["React", "Next.js", "TypeScript", "GraphQL", "Storybook"],
-    accent: "primary",
-  },
-  {
-    index: "02",
-    icon: "dns",
-    title: "Backend & Real-Time",
-    description:
-      "Real-time features wired through WebSockets, Go and Node.js microservices, MongoDB, and Docker-containerized deployments.",
-    tags: ["Go", "Node.js", "WebSockets", "MongoDB", "Docker"],
-    accent: "secondary",
-  },
-  {
-    index: "03",
-    icon: "polyline",
-    title: "Craft & Foundations",
-    description:
-      "Algorithms, system design, and the discipline of well-tested, performant code. 500+ LeetCode solved; CI/CD in muscle memory.",
-    tags: ["DSA", "System Design", "Web Performance", "Jest / Vitest", "CI/CD"],
-    accent: "primary",
-  },
-];
+export const ExpertiseSection = async () => {
+  const t = await getTranslations("expertise");
+  const skills = t.raw("skills") as Skill[];
+  const titleStart = t("titleStart");
+  const titleHighlight = t("titleHighlight");
 
-export const ExpertiseSection = () => {
   return (
     <section
       id='expertise'
@@ -50,15 +27,15 @@ export const ExpertiseSection = () => {
               memory
             </span>
             <span className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase text-primary'>
-              // Expertise Vectors
+              {t("kicker")}
             </span>
           </div>
           <h2 className='font-[family-name:var(--font-headline)] text-[44px] md:text-[72px] font-bold leading-[1.05] tracking-[-0.04em] mb-6'>
-            Technical <span className='text-gradient-animate'>Arsenal</span>
+            {titleStart && `${titleStart} `}
+            <span className='text-gradient-animate'>{titleHighlight}</span>
           </h2>
           <p className='font-[family-name:var(--font-body)] text-[16px] leading-[1.65] text-on-surface-variant'>
-            A toolset honed across systems engineering, immersive rendering, and
-            design-system architecture — calibrated for high-fidelity output.
+            {t("description")}
           </p>
         </header>
 
