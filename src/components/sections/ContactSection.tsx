@@ -1,7 +1,49 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { globeState } from "@/lib/globeState";
+
+type FormState = "idle" | "loading" | "success" | "error";
+
+const useContactForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<FormState>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const submit = async () => {
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      setErrorMsg("All fields are required.");
+      setStatus("error");
+      return;
+    }
+    setStatus("loading");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMsg(data.error ?? "Something went wrong. Try again.");
+        setStatus("error");
+      } else {
+        setStatus("success");
+        setName("");
+        setEmail("");
+        setMessage("");
+      }
+    } catch {
+      setErrorMsg("Network error. Check your connection and try again.");
+      setStatus("error");
+    }
+  };
+
+  return { name, setName, email, setEmail, message, setMessage, status, errorMsg, submit };
+};
 
 const networkNodes = [
   {
@@ -25,11 +67,12 @@ const networkNodes = [
 ];
 
 export const ContactSection = () => {
-  // Ref-callback: registers / clears the banner element in the module-level
-  // globeState store so GlobeSceneRenderer can read it inside useFrame.
   const setBannerRef = useCallback((el: HTMLDivElement | null) => {
     globeState.setBanner(el);
   }, []);
+
+  const { name, setName, email, setEmail, message, setMessage, status, errorMsg, submit } =
+    useContactForm();
 
   return (
     <section
@@ -59,53 +102,87 @@ export const ContactSection = () => {
           <div className='relative grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16'>
           <div className='hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/0 via-primary/40 to-secondary/0' />
 
-          <form className='glass-panel rounded-lg p-6 md:p-8 flex flex-col gap-6'>
+          <form
+            className='glass-panel rounded-lg p-6 md:p-8 flex flex-col gap-6'
+            onSubmit={(e) => { e.preventDefault(); submit(); }}
+          >
             <p className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.18em] uppercase text-primary'>
-              &gt; System ready. Awaiting input...
+              {status === "success"
+                ? "> Transmission received. Standing by."
+                : "> System ready. Awaiting input..."}
             </p>
 
-            <label className='flex flex-col gap-2'>
-              <span className='font-[family-name:var(--font-mono)] text-[11px] tracking-[0.2em] uppercase text-on-surface-variant'>
-                Identifier [Name]
-              </span>
-              <input
-                type='text'
-                placeholder='Enter your designation'
-                className='input-glow w-full'
-              />
-            </label>
+            {status === "success" ? (
+              <div className='flex flex-col items-center gap-3 py-8 text-center'>
+                <span className='material-symbols-outlined text-primary text-[48px]'>
+                  check_circle
+                </span>
+                <p className='font-[family-name:var(--font-body)] text-[15px] text-on-surface-variant'>
+                  Message transmitted successfully.
+                </p>
+              </div>
+            ) : (
+              <>
+                <label className='flex flex-col gap-2'>
+                  <span className='font-[family-name:var(--font-mono)] text-[11px] tracking-[0.2em] uppercase text-on-surface-variant'>
+                    Identifier [Name]
+                  </span>
+                  <input
+                    type='text'
+                    placeholder='Enter your designation'
+                    className='input-glow w-full'
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    disabled={status === "loading"}
+                  />
+                </label>
 
-            <label className='flex flex-col gap-2'>
-              <span className='font-[family-name:var(--font-mono)] text-[11px] tracking-[0.2em] uppercase text-on-surface-variant'>
-                Comm Link [Email]
-              </span>
-              <input
-                type='email'
-                placeholder='user@domain.com'
-                className='input-glow w-full'
-              />
-            </label>
+                <label className='flex flex-col gap-2'>
+                  <span className='font-[family-name:var(--font-mono)] text-[11px] tracking-[0.2em] uppercase text-on-surface-variant'>
+                    Comm Link [Email]
+                  </span>
+                  <input
+                    type='email'
+                    placeholder='user@domain.com'
+                    className='input-glow w-full'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={status === "loading"}
+                  />
+                </label>
 
-            <label className='flex flex-col gap-2'>
-              <span className='font-[family-name:var(--font-mono)] text-[11px] tracking-[0.2em] uppercase text-on-surface-variant'>
-                Payload [Message]
-              </span>
-              <textarea
-                placeholder='Transmit your request here...'
-                rows={4}
-                className='input-glow w-full resize-none'
-              />
-            </label>
+                <label className='flex flex-col gap-2'>
+                  <span className='font-[family-name:var(--font-mono)] text-[11px] tracking-[0.2em] uppercase text-on-surface-variant'>
+                    Payload [Message]
+                  </span>
+                  <textarea
+                    placeholder='Transmit your request here...'
+                    rows={4}
+                    className='input-glow w-full resize-none'
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    disabled={status === "loading"}
+                  />
+                </label>
 
-            <button
-              type='button'
-              className='self-start mt-2 inline-flex items-center gap-2 bg-primary text-on-primary font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase px-7 py-3 rounded btn-primary-glow transition-all duration-300 active:scale-95'
-            >
-              Transmit Data
-              <span className='material-symbols-outlined text-[18px]'>
-                send
-              </span>
-            </button>
+                {status === "error" && (
+                  <p className='font-[family-name:var(--font-mono)] text-[11px] tracking-[0.14em] uppercase text-red-400'>
+                    &gt; Error: {errorMsg}
+                  </p>
+                )}
+
+                <button
+                  type='submit'
+                  disabled={status === "loading"}
+                  className='self-start mt-2 inline-flex items-center gap-2 bg-primary text-on-primary font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase px-7 py-3 rounded btn-primary-glow transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed'
+                >
+                  {status === "loading" ? "Transmitting..." : "Transmit Data"}
+                  <span className='material-symbols-outlined text-[18px]'>
+                    {status === "loading" ? "hourglass_top" : "send"}
+                  </span>
+                </button>
+              </>
+            )}
           </form>
 
           <div className='flex flex-col gap-8'>

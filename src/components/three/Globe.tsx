@@ -129,11 +129,7 @@ export const Earth = () => {
     <group ref={groupRef}>
       <mesh>
         <sphereGeometry args={[1, 128, 128]} />
-        <meshStandardMaterial
-          map={earthMap}
-          roughness={0.85}
-          metalness={0.05}
-        />
+        <meshBasicMaterial map={earthMap} />
       </mesh>
 
       {/* Inner atmosphere */}

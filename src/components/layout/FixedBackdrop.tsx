@@ -1,6 +1,6 @@
 "use client";
 
-import { Scene } from "@/app/components/Scene";
+import { Scene } from "@/components/three/Scene";
 
 export const FixedBackdrop = () => {
   return (
