@@ -16,6 +16,7 @@ export const TopNav = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [activeId, setActiveId] = useState<string>("home");
+  const [scrolled, setScrolled] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
 
@@ -49,6 +50,12 @@ export const TopNav = () => {
   }, []);
 
   useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
     if (!langOpen) return;
     const handler = (e: MouseEvent) => {
       if (langRef.current && !langRef.current.contains(e.target as Node)) {
@@ -60,7 +67,7 @@ export const TopNav = () => {
   }, [langOpen]);
 
   return (
-    <nav className='fixed top-0 left-0 w-full z-50 bg-background/25 backdrop-blur-md backdrop-saturate-150 border-b border-white/5 shadow-[0px_0px_20px_rgba(0,219,233,0.08)]'>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-background/25 backdrop-blur-md backdrop-saturate-150 border-b border-white/5 shadow-[0px_0px_20px_rgba(0,219,233,0.08)]" : "bg-transparent border-b border-transparent"}`}>
       <div className='flex justify-between items-center px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)] h-20 max-w-[var(--container-max)] mx-auto'>
         <a
           href='#home'

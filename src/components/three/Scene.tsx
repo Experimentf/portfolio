@@ -98,7 +98,7 @@ const GlobeSceneRenderer = () => {
       <directionalLight position={[-1, 4, 2]} intensity={0.6} color='#d0e8ff' />
       {/* Violet rim from behind for the atmosphere glow */}
       <pointLight position={[-4, -1, -4]} intensity={0.8} color='#ebb2ff' />
-      <group position={[0, -1.55, 0]} scale={2.05}>
+      <group position={[0, -0.9, 0]} scale={2.05}>
         <Earth />
       </group>
     </Suspense>,
