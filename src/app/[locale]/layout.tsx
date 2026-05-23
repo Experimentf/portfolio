@@ -29,14 +29,22 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Divyansh Falodiya — Software Engineer",
+  title: "Divyansh Falodiya",
   description:
     "Personal portfolio of Divyansh Falodiya. Software engineer currently building at Mercari. Crafting immersive web experiences, WebGL environments, and digital artifacts at the seam of logic and spatial design.",
   openGraph: {
-    title: "Divyansh Falodiya — Software Engineer",
+    title: "Divyansh Falodiya",
     description:
       "Personal portfolio of Divyansh Falodiya. Software engineer crafting immersive web experiences and WebGL environments.",
     type: "website",
+    images: [
+      {
+        url: "https://avatars.githubusercontent.com/u/33622561?v=4",
+        width: 1200,
+        height: 630,
+        alt: "Divyansh Falodiya Portfolio",
+      },
+    ],
   },
 };
 
@@ -64,13 +72,13 @@ export default async function LocaleLayout({
     >
       <head>
         <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+          rel='stylesheet'
+          href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap'
         />
       </head>
-      <body className="antialiased bg-surface-container-lowest text-on-background min-h-screen">
+      <body className='antialiased bg-surface-container-lowest text-on-background min-h-screen'>
         <NextIntlClientProvider messages={messages}>
-          <FixedBackdrop/>
+          <FixedBackdrop />
           {children}
         </NextIntlClientProvider>
       </body>
