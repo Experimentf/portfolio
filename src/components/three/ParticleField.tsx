@@ -12,7 +12,7 @@ interface Props {
 export const ParticleField = ({ count = 2500, radius = 1800 }: Props) => {
   const pointsRef = useRef<THREE.Points>(null);
 
-  const { positions, colors } = useMemo(() => {
+  const { positions, colors,  } = useMemo(() => {
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
     const cyan = new THREE.Color("#00dbe9");
@@ -27,8 +27,9 @@ export const ParticleField = ({ count = 2500, radius = 1800 }: Props) => {
       colors[i * 3] = mixed.r;
       colors[i * 3 + 1] = mixed.g;
       colors[i * 3 + 2] = mixed.b;
+
     }
-    return { positions, colors };
+    return { positions, colors,  };
   }, [count, radius]);
 
   useFrame((_, delta) => {

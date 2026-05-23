@@ -142,8 +142,9 @@ const ProjectCard = ({
       ? "hover:shadow-[0_0_60px_-20px_rgba(0,219,233,0.5)]"
       : "hover:shadow-[0_0_60px_-20px_rgba(235,178,255,0.5)]";
   const accentIcon = accent === "primary" ? "text-primary" : "text-secondary";
+  const alignment = project.accent === "primary" ? "md:mr-auto" : "md:ml-auto";
 
-  const cardClass = `group relative flex flex-col h-full overflow-hidden rounded-xl bg-surface-container-lowest/70 backdrop-blur-md border ${accentBorder} ${accentShadow} transition-all duration-500 hover:-translate-y-2 ${className ?? ""}`;
+  const cardClass = `group md:max-w-xl relative flex flex-col h-full overflow-hidden rounded-xl bg-surface-container-lowest/70 backdrop-blur-md border ${accentBorder} ${accentShadow} transition-all duration-500 hover:-translate-y-2 ${alignment} ${className ?? ""}`;
 
   const chipBase =
     accent === "primary"
@@ -151,7 +152,7 @@ const ProjectCard = ({
       : "border-secondary/30 text-secondary hover:bg-secondary/10 hover:border-secondary/60";
 
   return (
-    <article className={cardClass}>
+    <article className={cardClass} >
       <div className='relative aspect-[16/10] w-full overflow-hidden shrink-0'>
         <div
           className={`absolute inset-0 bg-gradient-to-br ${accentBg} via-surface-container-low/40 to-surface-container-lowest`}
@@ -238,12 +239,10 @@ export const ProjectsSection = () => {
           </p>
         </header>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch'>
-          <ProjectCard project={projects[0]} className='md:col-span-2' />
-          <ProjectCard project={projects[1]} />
-          <ProjectCard project={projects[2]} />
-          <ProjectCard project={projects[3]} />
-          <ProjectCard project={projects[4]} />
+        <div className='flex flex-col gap-6 md:gap-8 items-stretch'>
+          {projects.map((project) => (
+            <ProjectCard key={project.index} project={project} />
+          ))}
         </div>
 
         <div className='mt-24 flex justify-center'>

@@ -85,16 +85,7 @@ export const TopNav = () => {
             rel='noreferrer noopener'
             className='hidden md:inline-flex items-center justify-center bg-primary text-on-primary font-[family-name:var(--font-mono)] text-[12px] tracking-[0.1em] uppercase px-6 py-2 rounded btn-primary-glow transition-all duration-300 active:scale-95'
           >
-            Get CV
-          </a>
-          <a
-            href='mailto:divyanshfofficial@gmail.com'
-            aria-label='Email Divyansh'
-            className='flex items-center justify-center p-2 text-primary border border-primary/30 rounded hover:bg-primary/10 transition-all duration-300 active:scale-95'
-          >
-            <span className='material-symbols-outlined text-[20px]'>
-              alternate_email
-            </span>
+            Resume
           </a>
         </div>
       </div>

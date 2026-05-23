@@ -7,7 +7,8 @@ import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ExpertiseSection } from "@/components/sections/ExpertiseSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
-export default function Home() {
+export default async function Home() {
+  // await new Promise(resolve => setTimeout(resolve, 100000));
   return (
     <>
       <FixedBackdrop />

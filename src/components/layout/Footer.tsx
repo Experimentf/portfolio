@@ -3,7 +3,6 @@ import { Logo } from "./Logo";
 const socials = [
   { label: "GitHub", href: "https://github.com/divyanshf" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/divyanshf/" },
-  { label: "LeetCode", href: "https://leetcode.com/divyanshf" },
   { label: "Email", href: "mailto:divyanshfofficial@gmail.com" },
 ] as const;
 
