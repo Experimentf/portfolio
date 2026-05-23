@@ -25,33 +25,12 @@ export const HeroSection = () => {
           <span className='h-px w-10 bg-primary/60' />
         </div>
 
-        <p className='font-[family-name:var(--font-body)] text-[16px] md:text-[17px] leading-[1.65] text-on-surface-variant max-w-2xl mb-12 drop-shadow-md'>
+        <p className='font-[family-name:var(--font-body)] text-[16px] md:text-[17px] leading-[1.65] text-on-surface-variant max-w-2xl drop-shadow-md'>
           Software engineer shipping marketplace-scale frontends at Mercari for
           20M+ users. I live at the seam of typed systems, performance, and the
           web&rsquo;s more immersive frontier — and I&rsquo;m happiest when
           something real ships.
         </p>
-
-        <div className='flex flex-col sm:flex-row gap-4 w-full sm:w-auto'>
-          <a
-            href='#journey'
-            className='bg-primary text-on-primary font-[family-name:var(--font-mono)] text-[12px] tracking-[0.18em] uppercase px-8 py-4 rounded btn-primary-glow transition-all duration-300 active:scale-95 flex items-center justify-center gap-2'
-          >
-            Enter Experience
-            <span className='material-symbols-outlined text-[18px]'>
-              arrow_forward
-            </span>
-          </a>
-          <a
-            href='#projects'
-            className='bg-transparent border border-outline-variant text-on-background font-[family-name:var(--font-mono)] text-[12px] tracking-[0.18em] uppercase px-8 py-4 rounded hover:border-primary/50 hover:bg-primary/5 backdrop-blur-md transition-all duration-300 active:scale-95 flex items-center justify-center gap-2'
-          >
-            View Matrix
-            <span className='material-symbols-outlined text-[18px]'>
-              grid_view
-            </span>
-          </a>
-        </div>
       </div>
 
       <a

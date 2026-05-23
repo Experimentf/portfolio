@@ -108,12 +108,26 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 }
 
 html,
 body {
   color: var(--foreground);
   font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+main > section,
+footer {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
 }
 
 body {

@@ -41,26 +41,21 @@ export const TopNav = () => {
   }, []);
 
   return (
-    <nav className='fixed top-0 left-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-white/5 shadow-[0px_0px_20px_rgba(0,219,233,0.08)]'>
+    <nav className='fixed top-0 left-0 w-full z-50 bg-background/25 backdrop-blur-md backdrop-saturate-150 border-b border-white/5 shadow-[0px_0px_20px_rgba(0,219,233,0.08)]'>
       <div className='flex justify-between items-center px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)] h-20 max-w-[var(--container-max)] mx-auto'>
         <a
           href='#home'
           aria-label='Divyansh Falodiya — Home'
-          className='group inline-flex items-center gap-3 text-primary transition-transform duration-200 active:scale-95'
+          className='group relative inline-flex items-center justify-center text-primary transition-transform duration-200 active:scale-95'
         >
-          <span className='relative inline-flex items-center justify-center'>
-            <span
-              aria-hidden
-              className='absolute inset-0 rounded-full bg-primary/30 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300'
-            />
-            <Logo
-              size={28}
-              className='relative drop-shadow-[0_0_10px_rgba(0,219,233,0.55)] group-hover:drop-shadow-[0_0_16px_rgba(0,219,233,0.9)] transition-all duration-300'
-            />
-          </span>
-          <span className='hidden sm:inline font-[family-name:var(--font-mono)] text-[11px] tracking-[0.32em] uppercase text-on-surface-variant group-hover:text-primary transition-colors duration-300'>
-            Divyansh<span className='text-primary'> · </span>Falodiya
-          </span>
+          <span
+            aria-hidden
+            className='absolute inset-0 rounded-full bg-primary/30 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300'
+          />
+          <Logo
+            size={28}
+            className='relative drop-shadow-[0_0_10px_rgba(0,219,233,0.55)] group-hover:drop-shadow-[0_0_16px_rgba(0,219,233,0.9)] transition-all duration-300'
+          />
         </a>
 
         <ul className='hidden md:flex items-center gap-[var(--spacing-gutter)]'>

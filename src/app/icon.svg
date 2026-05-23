@@ -1,27 +1,13 @@
-<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<svg width="64" height="64" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="d-grad" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#dbfcff" />
       <stop offset="55%" stop-color="#00f0ff" />
       <stop offset="100%" stop-color="#00dbe9" />
     </linearGradient>
-    <radialGradient id="d-glow" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0%" stop-color="#00dbe9" stop-opacity="0.6" />
-      <stop offset="60%" stop-color="#00dbe9" stop-opacity="0.15" />
-      <stop offset="100%" stop-color="#00dbe9" stop-opacity="0" />
-    </radialGradient>
-    <filter id="d-soft" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="0.6" />
-    </filter>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#0e0e0e" />
-  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.25" fill="none" stroke="#3b494b" stroke-opacity="0.6" stroke-width="0.5" />
-  <circle cx="32" cy="32" r="22" fill="url(#d-glow)" />
-  <g transform="translate(8.5 8.5) scale(0.94)">
-    <path
-      fill="url(#d-grad)"
-      filter="url(#d-soft)"
-      d="M14.77,14.28V48.49H.5V.5H19.1Q31.33.5,38.26,6.05q8.22,6.65,8.22,18,0,10.9-7,17.79t-18.1,6.89c-.87,0-2.29-.05-4.26-.14V34.53h2.29q12.48,0,12.48-10.44,0-9.81-12.27-9.81Z"
-    />
-  </g>
+  <path
+    fill="url(#d-grad)"
+    d="M14.77,14.28V48.49H.5V.5H19.1Q31.33.5,38.26,6.05q8.22,6.65,8.22,18,0,10.9-7,17.79t-18.1,6.89c-.87,0-2.29-.05-4.26-.14V34.53h2.29q12.48,0,12.48-10.44,0-9.81-12.27-9.81Z"
+  />
 </svg>

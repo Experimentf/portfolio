@@ -9,7 +9,7 @@ const socials = [
 
 export const Footer = () => {
   return (
-    <footer className='w-full py-12 bg-surface-container-lowest border-t border-outline-variant/20 relative z-10'>
+    <footer className='w-full py-12 bg-background/25 backdrop-blur-md backdrop-saturate-150 border-t border-white/5 shadow-[0px_-1px_20px_rgba(0,219,233,0.05)] relative z-10'>
       <div className='max-w-[var(--container-max)] mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)] flex flex-col md:flex-row justify-between items-center gap-4'>
         <div className='flex flex-col items-center md:items-start gap-3'>
           <div className='flex items-center gap-3'>
