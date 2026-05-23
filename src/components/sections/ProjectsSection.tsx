@@ -1,7 +1,3 @@
-import { TopNav } from "@/components/layout/TopNav";
-import { Footer } from "@/components/layout/Footer";
-import { AmbientBackdrop } from "@/components/layout/AmbientBackdrop";
-
 type Project = {
   index: string;
   year: string;
@@ -10,7 +6,6 @@ type Project = {
   description: string;
   accent: "primary" | "secondary";
   icon: string;
-  span: "wide" | "tall" | "medium";
 };
 
 const projects: Project[] = [
@@ -23,7 +18,6 @@ const projects: Project[] = [
       "Redefining distributed state management through a monolithic UI structure. Nexus introduced a novel approach to client-side data orchestration within highly complex enterprise dashboards.",
     accent: "primary",
     icon: "hub",
-    span: "wide",
   },
   {
     index: "02",
@@ -34,7 +28,6 @@ const projects: Project[] = [
       "Real-time spectral visualizations rendered directly in the browser using custom GLSL shaders — diagnostics that feel physical.",
     accent: "secondary",
     icon: "stacked_line_chart",
-    span: "tall",
   },
   {
     index: "03",
@@ -45,7 +38,6 @@ const projects: Project[] = [
       "An adaptive analytics canvas: telemetry, geo-streams, and event timelines stitched into a single immersive operator console.",
     accent: "primary",
     icon: "radar",
-    span: "medium",
   },
 ];
 
@@ -65,9 +57,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
   return (
     <article
-      className={`group relative overflow-hidden rounded-xl bg-surface-container-lowest border ${accentBorder} ${accentShadow} transition-all duration-500 hover:-translate-y-2`}
+      className={`group relative overflow-hidden rounded-xl bg-surface-container-lowest/70 backdrop-blur-md border ${accentBorder} ${accentShadow} transition-all duration-500 hover:-translate-y-2`}
     >
-      {/* Cover gradient + icon */}
       <div className='relative aspect-[16/10] w-full overflow-hidden'>
         <div
           className={`absolute inset-0 bg-gradient-to-br ${accentBg} via-surface-container-low/40 to-surface-container-lowest`}
@@ -89,7 +80,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </div>
       </div>
 
-      {/* Overlay */}
       <div className='glass-panel p-6 md:p-7 border-0 rounded-none'>
         <div className='flex justify-between items-start gap-4'>
           <div>
@@ -128,64 +118,61 @@ const ProjectCard = ({ project }: { project: Project }) => {
   );
 };
 
-export default function ProjectsPage() {
+export const ProjectsSection = () => {
   return (
-    <>
-      <TopNav />
-      <main className='relative min-h-screen w-full overflow-hidden pt-32 pb-32'>
-        <AmbientBackdrop />
-
-        <div className='relative z-10 max-w-[var(--container-max)] mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]'>
-          <header className='max-w-3xl mb-20 md:mb-28'>
-            <div className='flex items-center gap-3 mb-4'>
-              <div className='h-px w-10 bg-primary' />
-              <span className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase text-primary'>
-                Curated Works
-              </span>
-            </div>
-            <h1 className='font-[family-name:var(--font-headline)] text-[48px] md:text-[80px] font-bold leading-[1.05] tracking-[-0.04em] mb-6'>
-              Engineering /{" "}
-              <span className='text-surface-variant'>The Void.</span>
-            </h1>
-            <p className='font-[family-name:var(--font-body)] text-[16px] leading-[1.65] text-on-surface-variant'>
-              A selection of high-fidelity digital experiences and technical
-              explorations. Prioritizing architectural integrity, immersive
-              depth, and experimental interactions.
-            </p>
-          </header>
-
-          <div className='grid grid-cols-1 md:grid-cols-12 gap-y-20 md:gap-y-28 md:gap-x-6'>
-            <div className='md:col-span-8'>
-              <ProjectCard project={projects[0]} />
-            </div>
-            <div className='md:col-span-5 md:col-start-8 md:-mt-16'>
-              <ProjectCard project={projects[1]} />
-            </div>
-            <div className='md:col-span-7 md:col-start-1'>
-              <ProjectCard project={projects[2]} />
-            </div>
+    <section
+      id='projects'
+      className='relative w-full py-32 md:py-40 scroll-mt-20'
+    >
+      <div className='relative z-10 max-w-[var(--container-max)] mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]'>
+        <header className='max-w-3xl mb-20 md:mb-28'>
+          <div className='flex items-center gap-3 mb-4'>
+            <div className='h-px w-10 bg-primary' />
+            <span className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase text-primary'>
+              Curated Works
+            </span>
           </div>
+          <h2 className='font-[family-name:var(--font-headline)] text-[44px] md:text-[72px] font-bold leading-[1.05] tracking-[-0.04em] mb-6'>
+            Engineering /{" "}
+            <span className='text-surface-variant'>The Void.</span>
+          </h2>
+          <p className='font-[family-name:var(--font-body)] text-[16px] leading-[1.65] text-on-surface-variant'>
+            A selection of high-fidelity digital experiences and technical
+            explorations. Prioritizing architectural integrity, immersive depth,
+            and experimental interactions.
+          </p>
+        </header>
 
-          <div className='mt-24 flex justify-center'>
-            <button
-              type='button'
-              className='relative inline-flex items-center gap-3 font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase px-8 py-4 rounded-full bg-primary text-on-primary btn-primary-glow transition-all duration-300 active:scale-95'
-            >
-              <span
-                aria-hidden
-                className='absolute inset-0 rounded-full bg-primary blur-2xl opacity-40'
-              />
-              <span className='relative flex items-center gap-3'>
-                View Archive
-                <span className='material-symbols-outlined text-[18px]'>
-                  arrow_forward
-                </span>
-              </span>
-            </button>
+        <div className='grid grid-cols-1 md:grid-cols-12 gap-y-20 md:gap-y-28 md:gap-x-6'>
+          <div className='md:col-span-8'>
+            <ProjectCard project={projects[0]} />
+          </div>
+          <div className='md:col-span-5 md:col-start-8 md:-mt-16'>
+            <ProjectCard project={projects[1]} />
+          </div>
+          <div className='md:col-span-7 md:col-start-1'>
+            <ProjectCard project={projects[2]} />
           </div>
         </div>
-      </main>
-      <Footer />
-    </>
+
+        <div className='mt-24 flex justify-center'>
+          <button
+            type='button'
+            className='relative inline-flex items-center gap-3 font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase px-8 py-4 rounded-full bg-primary text-on-primary btn-primary-glow transition-all duration-300 active:scale-95'
+          >
+            <span
+              aria-hidden
+              className='absolute inset-0 rounded-full bg-primary blur-2xl opacity-40'
+            />
+            <span className='relative flex items-center gap-3'>
+              View Archive
+              <span className='material-symbols-outlined text-[18px]'>
+                arrow_forward
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
   );
-}
+};

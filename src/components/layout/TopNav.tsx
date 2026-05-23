@@ -1,41 +1,61 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const links = [
-  { href: "/journey", label: "Journey" },
-  { href: "/projects", label: "Projects" },
-  { href: "/about#expertise", label: "Expertise" },
-  { href: "/about#contact", label: "Contact" },
+  { id: "journey", label: "Journey" },
+  { id: "projects", label: "Projects" },
+  { id: "expertise", label: "Expertise" },
+  { id: "contact", label: "Contact" },
 ] as const;
 
 export const TopNav = () => {
-  const pathname = usePathname();
+  const [activeId, setActiveId] = useState<string>("home");
 
-  const isActive = (href: string) => {
-    const base = href.split("#")[0];
-    if (base === "/") return pathname === "/";
-    return pathname.startsWith(base);
-  };
+  useEffect(() => {
+    const sectionIds = ["home", ...links.map((l) => l.id)];
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) {
+          setActiveId(visible[0].target.id);
+        }
+      },
+      {
+        rootMargin: "-30% 0px -50% 0px",
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <nav className='fixed top-0 left-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-white/5 shadow-[0px_0px_20px_rgba(0,219,233,0.08)]'>
       <div className='flex justify-between items-center px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)] h-20 max-w-[var(--container-max)] mx-auto'>
-        <Link
-          href='/'
+        <a
+          href='#home'
           className='font-[family-name:var(--font-headline)] text-[24px] md:text-[28px] font-bold text-primary tracking-tighter uppercase active:scale-95 transition-transform duration-200'
         >
           VOID.LABS
-        </Link>
+        </a>
 
         <ul className='hidden md:flex items-center gap-[var(--spacing-gutter)]'>
-          {links.map(({ href, label }) => {
-            const active = isActive(href);
+          {links.map(({ id, label }) => {
+            const active = activeId === id;
             return (
-              <li key={href}>
-                <Link
-                  href={href}
+              <li key={id}>
+                <a
+                  href={`#${id}`}
                   className={`font-[family-name:var(--font-mono)] text-[12px] tracking-[0.1em] uppercase px-2 py-1 rounded transition-all duration-300 ${
                     active
                       ? "text-primary font-bold border-b-2 border-primary"
@@ -43,7 +63,7 @@ export const TopNav = () => {
                   }`}
                 >
                   {label}
-                </Link>
+                </a>
               </li>
             );
           })}
