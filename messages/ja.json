@@ -1,0 +1,206 @@
+{
+  "nav": {
+    "homeAriaLabel": "Divyansh Falodiya — ホーム",
+    "links": {
+      "journey": "経歴",
+      "projects": "プロジェクト",
+      "expertise": "スキル",
+      "contact": "連絡先"
+    },
+    "resume": "履歴書",
+    "languageLabel": "English"
+  },
+  "hero": {
+    "badge": "現在メルカリで開発中",
+    "tagline": "// 虚空の中で構築",
+    "bio": "メルカリで2000万人以上のユーザーに向けてマーケットプレイス規模のフロントエンドを届けるソフトウェアエンジニア。型付きシステム、パフォーマンス、そしてウェブのよりイマーシブなフロンティアの境界に存在し、何かリアルなものが世に出るときが最もやりがいを感じます。",
+    "scrollLabel": "スクロールして探索"
+  },
+  "journey": {
+    "kicker": "// キャリアログ",
+    "titleStart": "",
+    "titleHighlight": "経歴",
+    "description": "継続的な学習、プロフェッショナルな成長、そして技術的探求の歩みをたどります。学術的な基盤からフルタイムのエンジニアリングまで。",
+    "entries": [
+      {
+        "date": "2026年1月 — 現在",
+        "kicker": "現在のロール",
+        "title": "ソフトウェアエンジニア II (MG3)",
+        "org": "メルカリ株式会社 · 東京",
+        "body": "アーキテクチャから本番環境まで新しいAIネイティブWebアプリケーションを共同でリード — フロントエンドコードベースの50%以上を担当。AIツール（MCP、Claudeスキル）を活用して開発速度を50%以上向上させ、マルチアプリケーション対応のためモノレポ全体のアーキテクチャを刷新。新卒エンジニアのオンボーディングから自立まで指導。",
+        "accent": "secondary",
+        "tags": ["AI-Native", "Next.js", "Architecture", "Mentorship"]
+      },
+      {
+        "date": "2023年10月 — 2025年12月",
+        "kicker": "MG1 → MG2 昇格",
+        "title": "ソフトウェアエンジニア I",
+        "org": "メルカリ株式会社 · 東京",
+        "body": "Next.jsとTypeScriptで2000万人以上のユーザー向けに10件以上のマーケットプレイスセラー機能をリード。メルカリハローの求人応募数を30%向上。Jotaiによるセラーフローの再設計で不要なリレンダリングを削減し、レガシーContextからの移行を自動化するAI駆動のSlackワークフローを構築。Goマイクロサービスのサポートでフルスタックの横断的な作業を推進。",
+        "accent": "primary",
+        "tags": ["Next.js", "TypeScript", "Go", "Jotai"]
+      },
+      {
+        "date": "2023年1月 — 4月",
+        "kicker": "はじまり",
+        "title": "ソフトウェアエンジニア インターン",
+        "org": "メルカリ株式会社 · 東京",
+        "body": "ReactとTypeScriptで3件以上のプロダクション機能を見積もりより50%早く納品。GatsbyからNext.jsへのウェブ全体の移行に貢献。",
+        "accent": "secondary",
+        "tags": ["React", "TypeScript", "Migration"]
+      },
+      {
+        "date": "2023年5月",
+        "kicker": "大学卒業",
+        "title": "B.Tech. コンピューターサイエンス",
+        "org": "IIIT グワリオル",
+        "body": "インド情報技術研究所グワリオル校を卒業。データ構造、アルゴリズム、OOP、データベース、OS、ソフトウェアエンジニアリングを学習。競技プログラミングにも継続的に取り組む。",
+        "accent": "primary",
+        "tags": ["Algorithms", "Systems", "C++"]
+      },
+      {
+        "date": "2021年10月 — 2022年1月",
+        "kicker": "最初のインターンシップ",
+        "title": "フルスタック開発者 インターン",
+        "org": "Shopout · リモート",
+        "body": "Agora SDKとFirebaseを使用して300人以上のユーザーが利用するライブストリームプラットフォームを構築。Node.jsとMongoDBで請求書生成APIを改善し、クライアントサイドのPDF自動生成を実現。",
+        "accent": "secondary",
+        "tags": ["Node.js", "Firebase", "MongoDB"]
+      }
+    ]
+  },
+  "projects": {
+    "kicker": "サイドクエスト",
+    "titleStart": "稼働時間外の /",
+    "titleHighlight": "プロダクト。",
+    "description": "本業の傍らで開発したプロジェクトの小さなアーカイブ — リアルタイムゲームバックエンドからハッカソン受賞の開発者ツールまで。",
+    "moreOnGithub": "GitHubでもっと見る",
+    "items": [
+      {
+        "index": "01",
+        "year": "リアルタイム",
+        "title": "Doodle",
+        "category": "リアルタイムマルチプレイヤー",
+        "description": "React、Node.js、WebSocketsで構築したフルスタックのリアルタイムお絵かきゲーム。セッション管理、ユーザーマッチング、同期ゲーム状態をゼロから構築し、Web Workersで画像処理をオフロードして快適なUIを実現。DockerでコンテナIZEしGoogle Cloud Runにデプロイ。",
+        "accent": "primary",
+        "icon": "brush",
+        "links": [
+          { "label": "ライブ", "href": "https://doodle.experimentf.com/", "icon": "launch" },
+          { "label": "フロントエンド", "href": "https://github.com/Experimentf/doodle-client", "icon": "code" },
+          { "label": "バックエンド", "href": "https://github.com/Experimentf/doodle-server", "icon": "dns" }
+        ]
+      },
+      {
+        "index": "02",
+        "year": "ハッカソン優勝",
+        "title": "11 Bugs",
+        "category": "デベロッパーツール",
+        "description": "GitHub、CodeChef、Codeforcesの統計を集約するユニファイド開発者ダッシュボード。MongoDBベースのランキングアルゴリズムを独自に構築。フルスタックで開発し、Hackrocket '22にて50チーム以上の中から1位を獲得。",
+        "accent": "secondary",
+        "icon": "dashboard_customize",
+        "links": [
+          { "label": "ライブ", "href": "https://bugmenot.onrender.com/", "icon": "launch" },
+          { "label": "コード", "href": "https://github.com/divyanshf/11BUGS_1", "icon": "code" }
+        ]
+      },
+      {
+        "index": "03",
+        "year": "スター数最多",
+        "title": "Noter",
+        "category": "モバイル · Android",
+        "description": "Google Keepにインスパイアされたアンドロイド向けメモアプリ — マテリアルデザイン、カラーコード付きノート、Firebaseシンク。Kotlinで構築。GitHubで最もスターが多いリポジトリ。",
+        "accent": "primary",
+        "icon": "sticky_note_2",
+        "links": [
+          { "label": "コード", "href": "https://github.com/divyanshf/noter-android", "icon": "code" }
+        ]
+      },
+      {
+        "index": "04",
+        "year": "情報検索",
+        "title": "Plagiarism Detector",
+        "category": "アルゴリズム · CLI",
+        "description": "潜在意味解析と独自の情報検索技術を基盤とした、ソースコードファイル間の盗用検出CLIツール。Python製。",
+        "accent": "secondary",
+        "icon": "fingerprint",
+        "links": [
+          { "label": "コード", "href": "https://github.com/divyanshf/plagiarism-detector", "icon": "code" }
+        ]
+      },
+      {
+        "index": "05",
+        "year": "サイドクエスト",
+        "title": "Nihongo",
+        "category": "言語 · Webアプリ",
+        "description": "東京に来た際に日本語のかなと語彙を練習するために作った小さなWebアプリ。軽量で高速、Netlifyにデプロイ。朝の通勤時間に静かに活躍中。",
+        "accent": "primary",
+        "icon": "translate",
+        "links": [
+          { "label": "ライブ", "href": "https://go-nihongo.netlify.app/", "icon": "launch" },
+          { "label": "コード", "href": "https://github.com/divyanshf/nihongo", "icon": "code" }
+        ]
+      }
+    ]
+  },
+  "expertise": {
+    "kicker": "// エキスパートベクター",
+    "titleStart": "技術的な",
+    "titleHighlight": "武器庫",
+    "description": "システムエンジニアリング、イマーシブレンダリング、デザインシステムアーキテクチャにわたって磨かれたツールセット — 高精度な出力のために調整済み。",
+    "skills": [
+      {
+        "index": "01",
+        "icon": "code_blocks",
+        "title": "大規模フロントエンド",
+        "description": "TypeScriptでマーケットプレイス規模のReactとNext.js体験を提供 — 型安全、パフォーマンスチューニング、E2Eテスト済み。",
+        "tags": ["React", "Next.js", "TypeScript", "GraphQL", "Storybook"],
+        "accent": "primary"
+      },
+      {
+        "index": "02",
+        "icon": "dns",
+        "title": "バックエンドとリアルタイム",
+        "description": "WebSocket、GoとNode.jsマイクロサービス、MongoDB、Dockerコンテナ化デプロイメントによるリアルタイム機能。",
+        "tags": ["Go", "Node.js", "WebSockets", "MongoDB", "Docker"],
+        "accent": "secondary"
+      },
+      {
+        "index": "03",
+        "icon": "polyline",
+        "title": "クラフトと基礎",
+        "description": "アルゴリズム、システム設計、そして十分にテストされた高パフォーマンスコードの規律。LeetCode 500問以上解答；CI/CDは体に染み付いている。",
+        "tags": ["DSA", "System Design", "Web Performance", "Jest / Vitest", "CI/CD"],
+        "accent": "primary"
+      }
+    ]
+  },
+  "contact": {
+    "kicker": "// 接続を開始",
+    "titleStart": "チャンネルを",
+    "titleHighlight": "開く",
+    "description": "コラボレーション、依頼、またはウェブの未来についての静かな会話のための直通ライン。",
+    "form": {
+      "systemReady": "> システム準備完了。入力待ち...",
+      "transmissionReceived": "> 送信完了。待機中。",
+      "success": "メッセージが正常に送信されました。",
+      "nameLabel": "識別子 [名前]",
+      "namePlaceholder": "お名前を入力",
+      "emailLabel": "通信リンク [メール]",
+      "emailPlaceholder": "user@domain.com",
+      "messageLabel": "ペイロード [メッセージ]",
+      "messagePlaceholder": "リクエストをここに送信...",
+      "submit": "データを送信",
+      "transmitting": "送信中...",
+      "errorRequired": "すべてのフィールドは必須です。",
+      "errorGeneric": "エラーが発生しました。もう一度お試しください。",
+      "errorNetwork": "ネットワークエラーです。接続を確認してください。"
+    },
+    "networkNodesTitle": "// ネットワークノード",
+    "coordinatesTitle": "// 直接座標",
+    "location": "東京、日本",
+    "timezone": "JST +09:00 // 標準営業時間"
+  },
+  "footer": {
+    "tagline": "虚空でデザイン。"
+  }
+}
