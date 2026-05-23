@@ -18,7 +18,7 @@ import { globeState } from "@/lib/globeState";
 // automatic render, we must call renderer.render(scene, camera) for particles
 // ourselves — that's the gl.render(scene, camera) call below.
 const GlobeSceneRenderer = () => {
-  const { gl, scene, camera } = useThree();
+  const { gl } = useThree();
   const [globeScene] = useState(() => new THREE.Scene());
   const globeCamera = useMemo(() => {
     const cam = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
@@ -56,7 +56,8 @@ const GlobeSceneRenderer = () => {
       rect.height <= 0 ||
       rect.bottom <= 0 ||
       rect.top >= size.height
-    ) return;
+    )
+      return;
 
     // Extend from the banner's visible top all the way to the viewport bottom so
     // the earth continues behind the footer's glass panel instead of cutting off

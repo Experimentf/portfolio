@@ -63,7 +63,7 @@ const ProjectCard = ({
           <span
             className={`font-[family-name:var(--font-mono)] text-[10px] tracking-[0.22em] uppercase ${accentIcon}`}
           >
-            // {project.index} — {project.year}
+            {"//"} {project.index} — {project.year}
           </span>
         </div>
       </div>
@@ -137,7 +137,10 @@ export const ProjectsSection = async () => {
           </p>
         </header>
 
-        <div data-animate-children className='flex flex-col gap-6 md:gap-8 items-stretch'>
+        <div
+          data-animate-children
+          className='flex flex-col gap-6 md:gap-8 items-stretch'
+        >
           {projects.map((project) => (
             <ProjectCard key={project.index} project={project} />
           ))}
