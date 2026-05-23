@@ -77,7 +77,7 @@ export const ContactSection = () => {
       className='relative w-full pt-32 md:pt-40 pb-0 scroll-mt-20 overflow-hidden'
     >
       <div className='relative z-10 max-w-[var(--container-max)] mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]'>
-        <header className='mb-16 text-center max-w-3xl mx-auto'>
+        <header data-animate className='mb-16 text-center max-w-3xl mx-auto'>
           <span className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase text-secondary'>
             {t("kicker")}
           </span>
@@ -97,6 +97,7 @@ export const ContactSection = () => {
             <div className='hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/0 via-primary/40 to-secondary/0' />
 
             <form
+              data-animate
               className='glass-panel rounded-lg p-6 md:p-8 flex flex-col gap-6'
               onSubmit={(e) => {
                 e.preventDefault();
@@ -180,7 +181,7 @@ export const ContactSection = () => {
               )}
             </form>
 
-            <div className='flex flex-col gap-8'>
+            <div data-animate data-animate-delay='0.15' className='flex flex-col gap-8'>
               <div>
                 <h3 className='font-[family-name:var(--font-mono)] text-[11px] tracking-[0.22em] uppercase text-secondary mb-4'>
                   {t("networkNodesTitle")}

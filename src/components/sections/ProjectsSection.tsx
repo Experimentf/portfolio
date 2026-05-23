@@ -121,7 +121,7 @@ export const ProjectsSection = async () => {
       className='relative w-full py-32 md:py-40 scroll-mt-20'
     >
       <div className='relative z-10 max-w-[var(--container-max)] mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]'>
-        <header className='max-w-3xl mb-20 md:mb-28'>
+        <header data-animate className='max-w-3xl mb-20 md:mb-28'>
           <div className='flex items-center gap-3 mb-4'>
             <div className='h-px w-10 bg-primary' />
             <span className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase text-primary'>
@@ -137,13 +137,13 @@ export const ProjectsSection = async () => {
           </p>
         </header>
 
-        <div className='flex flex-col gap-6 md:gap-8 items-stretch'>
+        <div data-animate-children className='flex flex-col gap-6 md:gap-8 items-stretch'>
           {projects.map((project) => (
             <ProjectCard key={project.index} project={project} />
           ))}
         </div>
 
-        <div className='mt-24 flex justify-center'>
+        <div data-animate className='mt-24 flex justify-center'>
           <a
             href='https://github.com/divyanshf'
             target='_blank'

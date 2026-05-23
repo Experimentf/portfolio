@@ -141,7 +141,7 @@ export const TopNav = () => {
             href='https://drive.google.com/file/d/1B0EwlzfWRb_jDUI_jxVY0mviMlXSo3EC/view?usp=drive_link'
             target='_blank'
             rel='noreferrer noopener'
-            className='hidden md:inline-flex items-center justify-center bg-primary text-on-primary font-[family-name:var(--font-mono)] text-[12px] tracking-[0.1em] uppercase px-6 py-2 rounded btn-primary-glow transition-all duration-300 active:scale-95'
+            className='md:inline-flex items-center justify-center bg-primary text-on-primary font-[family-name:var(--font-mono)] text-[12px] tracking-[0.1em] uppercase px-6 py-2 rounded btn-primary-glow transition-all duration-300 active:scale-95'
           >
             {t("resume")}
           </a>

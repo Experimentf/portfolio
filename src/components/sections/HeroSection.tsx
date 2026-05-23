@@ -7,7 +7,7 @@ export const HeroSection = async () => {
       id='home'
       className='relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden pt-20 scroll-mt-20'
     >
-      <div className='relative z-10 flex flex-col items-center text-center px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)] max-w-5xl'>
+      <div data-animate-children className='relative z-10 flex flex-col items-center text-center px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)] max-w-5xl'>
         <div className='inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-secondary/10 border border-secondary/30 backdrop-blur-md'>
           <span className='w-2 h-2 rounded-full bg-secondary animate-pulse shadow-[0_0_8px_rgba(235,178,255,0.8)]' />
           <span className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.18em] uppercase text-secondary'>
@@ -34,6 +34,8 @@ export const HeroSection = async () => {
       </div>
 
       <a
+        data-animate-load
+        data-animate-delay='0.6'
         href='#journey'
         aria-label={t("scrollLabel")}
         className='absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 opacity-80 hover:opacity-100 transition-opacity duration-300'

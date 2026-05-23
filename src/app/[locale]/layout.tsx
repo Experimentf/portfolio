@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { ScrollAnimations } from "@/components/layout/ScrollAnimations";
 import "../globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -70,6 +71,7 @@ export default async function LocaleLayout({
       <body className="antialiased bg-surface-container-lowest text-on-background min-h-screen">
         <NextIntlClientProvider messages={messages}>
           {children}
+          <ScrollAnimations />
         </NextIntlClientProvider>
       </body>
     </html>

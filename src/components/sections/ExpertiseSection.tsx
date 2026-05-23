@@ -21,7 +21,7 @@ export const ExpertiseSection = async () => {
       className='relative w-full py-32 md:py-40 scroll-mt-20'
     >
       <div className='relative z-10 max-w-[var(--container-max)] mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]'>
-        <header className='max-w-3xl mb-16 md:mb-20'>
+        <header data-animate className='max-w-3xl mb-16 md:mb-20'>
           <div className='flex items-center gap-4 mb-4'>
             <span className='material-symbols-outlined text-primary text-[28px] drop-shadow-[0_0_12px_rgba(0,219,233,0.6)]'>
               memory
@@ -39,7 +39,7 @@ export const ExpertiseSection = async () => {
           </p>
         </header>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+        <div data-animate-children className='grid grid-cols-1 md:grid-cols-3 gap-6'>
           {skills.map((skill) => {
             const accentIcon =
               skill.accent === "primary" ? "text-primary" : "text-secondary";

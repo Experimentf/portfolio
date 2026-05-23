@@ -61,7 +61,7 @@ export const JourneySection = async () => {
       className='relative w-full py-32 md:py-40 scroll-mt-20'
     >
       <div className='relative z-10 max-w-[var(--container-max)] mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]'>
-        <header className='text-center max-w-3xl mx-auto mb-20 md:mb-28'>
+        <header data-animate className='text-center max-w-3xl mx-auto mb-20 md:mb-28'>
           <span className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase text-primary'>
             {t("kicker")}
           </span>
@@ -77,7 +77,7 @@ export const JourneySection = async () => {
         <div className='relative max-w-4xl mx-auto'>
           <div className='pointer-events-none absolute top-0 bottom-0 left-4 md:left-1/2 md:-translate-x-1/2 w-px bg-gradient-to-b from-secondary/60 via-primary/40 to-secondary/0' />
 
-          <ol className='space-y-16 md:space-y-24'>
+          <ol data-animate-children className='space-y-16 md:space-y-24'>
             {entries.map((entry, i) => {
               const reverse = i % 2 === 1;
               const nodeColor =
