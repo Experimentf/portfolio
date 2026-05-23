@@ -98,6 +98,17 @@ export const TopNav = () => {
         </ul>
 
         <div className='flex items-center gap-2'>
+          
+
+          <a
+            href='https://drive.google.com/file/d/1B0EwlzfWRb_jDUI_jxVY0mviMlXSo3EC/view?usp=drive_link'
+            target='_blank'
+            rel='noreferrer noopener'
+            className='md:inline-flex items-center justify-center bg-primary text-on-primary font-[family-name:var(--font-mono)] text-[12px] tracking-[0.1em] uppercase px-6 py-2 rounded btn-primary-glow transition-all duration-300 active:scale-95'
+          >
+            {t("resume")}
+          </a>
+
           {/* Language picker */}
           <div ref={langRef} className='relative'>
             <button
@@ -136,15 +147,6 @@ export const TopNav = () => {
               </div>
             )}
           </div>
-
-          <a
-            href='https://drive.google.com/file/d/1B0EwlzfWRb_jDUI_jxVY0mviMlXSo3EC/view?usp=drive_link'
-            target='_blank'
-            rel='noreferrer noopener'
-            className='md:inline-flex items-center justify-center bg-primary text-on-primary font-[family-name:var(--font-mono)] text-[12px] tracking-[0.1em] uppercase px-6 py-2 rounded btn-primary-glow transition-all duration-300 active:scale-95'
-          >
-            {t("resume")}
-          </a>
         </div>
       </div>
     </nav>
