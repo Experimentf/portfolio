@@ -1,6 +1,11 @@
 "use client";
 
-import { Scene } from "@/components/three/Scene";
+import dynamic from "next/dynamic";
+
+const Scene = dynamic(
+  () => import("@/components/three/Scene").then((mod) => mod.Scene),
+  { ssr: false },
+);
 
 export const FixedBackdrop = () => {
   return (

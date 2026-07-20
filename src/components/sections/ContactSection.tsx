@@ -105,7 +105,9 @@ export const ContactSection = () => {
               }}
             >
               <p className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.18em] uppercase text-primary'>
-                {status === "success" ? ft("transmissionReceived") : ft("systemReady")}
+                {status === "success"
+                  ? ft("transmissionReceived")
+                  : ft("systemReady")}
               </p>
 
               {status === "success" ? (
@@ -170,7 +172,7 @@ export const ContactSection = () => {
                   <button
                     type='submit'
                     disabled={status === "loading"}
-                    className='self-start mt-2 inline-flex items-center gap-2 bg-primary text-on-primary font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase px-7 py-3 rounded btn-primary-glow transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed'
+                    className='cursor-pointer self-start mt-2 inline-flex items-center gap-2 bg-primary text-on-primary font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase px-7 py-3 rounded btn-primary-glow transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed'
                   >
                     {status === "loading" ? ft("transmitting") : ft("submit")}
                     <span className='material-symbols-outlined text-[18px]'>
@@ -181,7 +183,11 @@ export const ContactSection = () => {
               )}
             </form>
 
-            <div data-animate data-animate-delay='0.15' className='flex flex-col gap-8'>
+            <div
+              data-animate
+              data-animate-delay='0.15'
+              className='flex flex-col gap-8'
+            >
               <div>
                 <h3 className='font-[family-name:var(--font-mono)] text-[11px] tracking-[0.22em] uppercase text-secondary mb-4'>
                   {t("networkNodesTitle")}

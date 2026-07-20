@@ -67,7 +67,9 @@ export const TopNav = () => {
   }, [langOpen]);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-background/25 backdrop-blur-md backdrop-saturate-150 border-b border-white/5 shadow-[0px_0px_20px_rgba(0,219,233,0.08)]" : "bg-transparent border-b border-transparent"}`}>
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-background/25 backdrop-blur-md backdrop-saturate-150 border-b border-white/5 shadow-[0px_0px_20px_rgba(0,219,233,0.08)]" : "bg-transparent border-b border-transparent"}`}
+    >
       <div className='flex justify-between items-center px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)] h-20 max-w-[var(--container-max)] mx-auto'>
         <a
           href='#home'
@@ -105,8 +107,6 @@ export const TopNav = () => {
         </ul>
 
         <div className='flex items-center gap-2'>
-          
-
           <a
             href='https://drive.google.com/file/d/1B0EwlzfWRb_jDUI_jxVY0mviMlXSo3EC/view?usp=drive_link'
             target='_blank'
@@ -122,9 +122,11 @@ export const TopNav = () => {
               onClick={() => setLangOpen((o) => !o)}
               aria-label='Select language'
               aria-expanded={langOpen}
-              className='inline-flex items-center justify-center w-9 h-9 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all duration-300'
+              className='cursor-pointer inline-flex items-center justify-center w-9 h-9 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all duration-300'
             >
-              <span className='material-symbols-outlined text-[20px]'>translate</span>
+              <span className='material-symbols-outlined text-[20px]'>
+                translate
+              </span>
             </button>
 
             {langOpen && (
@@ -138,7 +140,7 @@ export const TopNav = () => {
                         router.replace(pathname, { locale: code });
                         setLangOpen(false);
                       }}
-                      className={`w-full flex items-center justify-between px-4 py-2.5 font-[family-name:var(--font-mono)] text-[12px] tracking-[0.1em] uppercase transition-colors duration-200 ${
+                      className={`cursor-pointer w-full flex items-center justify-between px-4 py-2.5 font-[family-name:var(--font-mono)] text-[12px] tracking-[0.1em] uppercase transition-colors duration-200 ${
                         active
                           ? "text-primary"
                           : "text-on-surface-variant hover:text-on-surface hover:bg-white/5"
@@ -146,7 +148,9 @@ export const TopNav = () => {
                     >
                       {label}
                       {active && (
-                        <span className='material-symbols-outlined text-[14px]'>check</span>
+                        <span className='material-symbols-outlined text-[14px]'>
+                          check
+                        </span>
                       )}
                     </button>
                   );

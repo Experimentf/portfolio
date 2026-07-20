@@ -25,20 +25,35 @@
       {
         "date": "2026年1月 — 現在",
         "kicker": "現在のロール",
-        "title": "ソフトウェアエンジニア II (MG3)",
+        "title": "ソフトウェアエンジニア III",
         "org": "メルカリ株式会社 · 東京",
-        "body": "アーキテクチャから本番環境まで新しいAIネイティブWebアプリケーションを共同でリード — フロントエンドコードベースの50%以上を担当。AIツール（MCP、Claudeスキル）を活用して開発速度を50%以上向上させ、マルチアプリケーション対応のためモノレポ全体のアーキテクチャを刷新。新卒エンジニアのオンボーディングから自立まで指導。",
+        "body": "新しいB2Cサービス <a href='https://mdepa.jp.mercari.com/' target='_blank' rel='noopener noreferrer'>m department<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1='10' y1='14' x2='21' y2='3'/></svg></a> をゼロから立ち上げ、フロントエンドの設計を主導し初期コードベースの50%以上を担当。AIツール（MCP、Claude）を活用して開発を加速し、6ヶ月で全てのコア機能をリリース。新卒エンジニアが自立できるまで指導した。",
         "accent": "secondary",
-        "tags": ["AI-Native", "Next.js", "Architecture", "Mentorship"]
+        "tags": [
+          "Architecture",
+          "Next.js",
+          "AI-Native",
+          "Mentorship",
+          "Spinnaker"
+        ]
       },
       {
-        "date": "2023年10月 — 2025年12月",
-        "kicker": "MG1 → MG2 昇格",
+        "date": "2024年7月 — 2025年12月",
+        "kicker": "昇格",
+        "title": "ソフトウェアエンジニア II",
+        "org": "メルカリ株式会社 · 東京",
+        "body": "2000万人以上のユーザー向けに、複雑なセラーワークフロー機能をNext.jsで10件以上リリース。レガシーContextからJotaiへ状態管理を移行し、パフォーマンス向上と不要な再レンダリングの削減を実現。Goマイクロサービスの開発にも貢献し、エンジニアインターン2名を指導。",
+        "accent": "primary",
+        "tags": ["Next.js", "TypeScript", "Performance", "Go"]
+      },
+      {
+        "date": "2023年10月 — 2024年6月",
+        "kicker": "初めてのフルタイム職",
         "title": "ソフトウェアエンジニア I",
         "org": "メルカリ株式会社 · 東京",
-        "body": "Next.jsとTypeScriptで2000万人以上のユーザー向けに10件以上のマーケットプレイスセラー機能をリード。メルカリハローの求人応募数を30%向上。Jotaiによるセラーフローの再設計で不要なリレンダリングを削減し、レガシーContextからの移行を自動化するAI駆動のSlackワークフローを構築。Goマイクロサービスのサポートでフルスタックの横断的な作業を推進。",
-        "accent": "primary",
-        "tags": ["Next.js", "TypeScript", "Go", "Jotai"]
+        "body": "外部SDKを改修してマルチバナーカルーセルの移行をリードし、リリースを加速。メルカリハローの部門横断機能を開発し、求人応募数30%増加に貢献。",
+        "accent": "secondary",
+        "tags": ["Next.js", "TypeScript", "SDK Integration"]
       },
       {
         "date": "2023年1月 — 4月",
@@ -85,9 +100,21 @@
         "accent": "primary",
         "icon": "brush",
         "links": [
-          { "label": "ライブ", "href": "https://doodle.experimentf.com/", "icon": "launch" },
-          { "label": "フロントエンド", "href": "https://github.com/Experimentf/doodle-client", "icon": "code" },
-          { "label": "バックエンド", "href": "https://github.com/Experimentf/doodle-server", "icon": "dns" }
+          {
+            "label": "ライブ",
+            "href": "https://doodle.experimentf.com/",
+            "icon": "launch"
+          },
+          {
+            "label": "フロントエンド",
+            "href": "https://github.com/Experimentf/doodle-client",
+            "icon": "code"
+          },
+          {
+            "label": "バックエンド",
+            "href": "https://github.com/Experimentf/doodle-server",
+            "icon": "dns"
+          }
         ]
       },
       {
@@ -99,8 +126,16 @@
         "accent": "secondary",
         "icon": "dashboard_customize",
         "links": [
-          { "label": "ライブ", "href": "https://bugmenot.onrender.com/", "icon": "launch" },
-          { "label": "コード", "href": "https://github.com/divyanshf/11BUGS_1", "icon": "code" }
+          {
+            "label": "ライブ",
+            "href": "https://bugmenot.onrender.com/",
+            "icon": "launch"
+          },
+          {
+            "label": "コード",
+            "href": "https://github.com/divyanshf/11BUGS_1",
+            "icon": "code"
+          }
         ]
       },
       {
@@ -112,7 +147,11 @@
         "accent": "primary",
         "icon": "sticky_note_2",
         "links": [
-          { "label": "コード", "href": "https://github.com/divyanshf/noter-android", "icon": "code" }
+          {
+            "label": "コード",
+            "href": "https://github.com/divyanshf/noter-android",
+            "icon": "code"
+          }
         ]
       },
       {
@@ -124,7 +163,11 @@
         "accent": "secondary",
         "icon": "fingerprint",
         "links": [
-          { "label": "コード", "href": "https://github.com/divyanshf/plagiarism-detector", "icon": "code" }
+          {
+            "label": "コード",
+            "href": "https://github.com/divyanshf/plagiarism-detector",
+            "icon": "code"
+          }
         ]
       },
       {
@@ -136,8 +179,16 @@
         "accent": "primary",
         "icon": "translate",
         "links": [
-          { "label": "ライブ", "href": "https://go-nihongo.netlify.app/", "icon": "launch" },
-          { "label": "コード", "href": "https://github.com/divyanshf/nihongo", "icon": "code" }
+          {
+            "label": "ライブ",
+            "href": "https://go-nihongo.netlify.app/",
+            "icon": "launch"
+          },
+          {
+            "label": "コード",
+            "href": "https://github.com/divyanshf/nihongo",
+            "icon": "code"
+          }
         ]
       }
     ]
@@ -169,7 +220,13 @@
         "icon": "polyline",
         "title": "クラフトと基礎",
         "description": "アルゴリズム、システム設計、そして十分にテストされた高パフォーマンスコードの規律。LeetCode 500問以上解答；CI/CDは体に染み付いている。",
-        "tags": ["DSA", "System Design", "Web Performance", "Jest / Vitest", "CI/CD"],
+        "tags": [
+          "DSA",
+          "System Design",
+          "Web Performance",
+          "Jest / Vitest",
+          "CI/CD"
+        ],
         "accent": "primary"
       }
     ]
