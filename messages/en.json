@@ -25,20 +25,35 @@
       {
         "date": "Jan 2026 — Present",
         "kicker": "Current Role",
-        "title": "Software Engineer II (MG3)",
+        "title": "Software Engineer III",
         "org": "Mercari, Inc. · Tokyo",
-        "body": "Co-leading a new AI-native web application from architecture to production — owning 50%+ of the frontend codebase. Leveraging AI tooling (MCPs, Claude skills) to accelerate development by 50%+, and driving monorepo-wide architectural updates for multi-application support. Mentoring new-grad engineers from onboarding through self-sufficiency.",
+        "body": "Launched <a href='https://mdepa.jp.mercari.com/' target='_blank' rel='noopener noreferrer'>m department<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1='10' y1='14' x2='21' y2='3'/></svg></a>, a new B2C service, from greenfield, architecting the frontend and owning over 50% of the initial codebase. Accelerated development with AI tooling (MCPs, Claude) to deliver all core features in 6 months, while mentoring new graduates to self-sufficiency.",
         "accent": "secondary",
-        "tags": ["AI-Native", "Next.js", "Architecture", "Mentorship"]
+        "tags": [
+          "Architecture",
+          "Next.js",
+          "AI-Native",
+          "Mentorship",
+          "Spinnaker"
+        ]
       },
       {
-        "date": "Oct 2023 — Dec 2025",
-        "kicker": "Promoted MG1 → MG2",
+        "date": "Jul 2024 — Dec 2025",
+        "kicker": "Promotion",
+        "title": "Software Engineer II",
+        "org": "Mercari, Inc. · Tokyo",
+        "body": "Delivered 10+ features for complex seller workflows in Next.js for 20M+ users. Migrated state from legacy Context to Jotai, improving performance and reducing re-renders. Contributed to Go microservices and mentored 2 engineering interns.",
+        "accent": "primary",
+        "tags": ["Next.js", "TypeScript", "Performance", "Go"]
+      },
+      {
+        "date": "Oct 2023 — Jun 2024",
+        "kicker": "First Full-Time Role",
         "title": "Software Engineer I",
         "org": "Mercari, Inc. · Tokyo",
-        "body": "Led 10+ marketplace seller features in Next.js and TypeScript for 20M+ users; drove a 30% uplift in job applications across Mercari Hallo. Redesigned complex seller flows with Jotai to slash re-renders, and engineered an AI-powered Slack workflow to automate the migration from legacy Context. Supported Go microservices to unblock cross-functional full-stack work.",
-        "accent": "primary",
-        "tags": ["Next.js", "TypeScript", "Go", "Jotai"]
+        "body": "Led the multi-banner carousel migration by modifying an external SDK to accelerate launch. Developed cross-division features for Mercari Hallo, contributing to a 30% increase in job applications.",
+        "accent": "secondary",
+        "tags": ["Next.js", "TypeScript", "SDK Integration"]
       },
       {
         "date": "Jan 2023 — Apr 2023",
@@ -85,9 +100,21 @@
         "accent": "primary",
         "icon": "brush",
         "links": [
-          { "label": "Live", "href": "https://doodle.experimentf.com/", "icon": "launch" },
-          { "label": "Frontend", "href": "https://github.com/Experimentf/doodle-client", "icon": "code" },
-          { "label": "Backend", "href": "https://github.com/Experimentf/doodle-server", "icon": "dns" }
+          {
+            "label": "Live",
+            "href": "https://doodle.experimentf.com/",
+            "icon": "launch"
+          },
+          {
+            "label": "Frontend",
+            "href": "https://github.com/Experimentf/doodle-client",
+            "icon": "code"
+          },
+          {
+            "label": "Backend",
+            "href": "https://github.com/Experimentf/doodle-server",
+            "icon": "dns"
+          }
         ]
       },
       {
@@ -99,8 +126,16 @@
         "accent": "secondary",
         "icon": "dashboard_customize",
         "links": [
-          { "label": "Live", "href": "https://bugmenot.onrender.com/", "icon": "launch" },
-          { "label": "Code", "href": "https://github.com/divyanshf/11BUGS_1", "icon": "code" }
+          {
+            "label": "Live",
+            "href": "https://bugmenot.onrender.com/",
+            "icon": "launch"
+          },
+          {
+            "label": "Code",
+            "href": "https://github.com/divyanshf/11BUGS_1",
+            "icon": "code"
+          }
         ]
       },
       {
@@ -112,7 +147,11 @@
         "accent": "primary",
         "icon": "sticky_note_2",
         "links": [
-          { "label": "Code", "href": "https://github.com/divyanshf/noter-android", "icon": "code" }
+          {
+            "label": "Code",
+            "href": "https://github.com/divyanshf/noter-android",
+            "icon": "code"
+          }
         ]
       },
       {
@@ -124,7 +163,11 @@
         "accent": "secondary",
         "icon": "fingerprint",
         "links": [
-          { "label": "Code", "href": "https://github.com/divyanshf/plagiarism-detector", "icon": "code" }
+          {
+            "label": "Code",
+            "href": "https://github.com/divyanshf/plagiarism-detector",
+            "icon": "code"
+          }
         ]
       },
       {
@@ -136,8 +179,16 @@
         "accent": "primary",
         "icon": "translate",
         "links": [
-          { "label": "Live", "href": "https://go-nihongo.netlify.app/", "icon": "launch" },
-          { "label": "Code", "href": "https://github.com/divyanshf/nihongo", "icon": "code" }
+          {
+            "label": "Live",
+            "href": "https://go-nihongo.netlify.app/",
+            "icon": "launch"
+          },
+          {
+            "label": "Code",
+            "href": "https://github.com/divyanshf/nihongo",
+            "icon": "code"
+          }
         ]
       }
     ]
@@ -169,7 +220,13 @@
         "icon": "polyline",
         "title": "Craft & Foundations",
         "description": "Algorithms, system design, and the discipline of well-tested, performant code. 500+ LeetCode solved; CI/CD in muscle memory.",
-        "tags": ["DSA", "System Design", "Web Performance", "Jest / Vitest", "CI/CD"],
+        "tags": [
+          "DSA",
+          "System Design",
+          "Web Performance",
+          "Jest / Vitest",
+          "CI/CD"
+        ],
         "accent": "primary"
       }
     ]

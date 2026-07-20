@@ -32,9 +32,10 @@ const TimelineCard = ({ entry }: { entry: Entry }) => {
       <p className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.14em] uppercase text-on-surface-variant mb-4'>
         @ {entry.org}
       </p>
-      <p className='font-[family-name:var(--font-body)] text-[15px] leading-[1.65] text-on-surface-variant mb-6'>
-        {entry.body}
-      </p>
+      <p
+        className='font-[family-name:var(--font-body)] text-[15px] leading-[1.65] text-on-surface-variant mb-6 [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 [&_a]:inline-flex [&_a]:items-center [&_a]:gap-1 hover:[&_a]:text-primary/80 [&_a_svg]:shrink-0'
+        dangerouslySetInnerHTML={{ __html: entry.body }}
+      />
       <div className='flex flex-wrap gap-2'>
         {entry.tags.map((tag) => (
           <span
@@ -61,7 +62,10 @@ export const JourneySection = async () => {
       className='relative w-full py-32 md:py-40 scroll-mt-20'
     >
       <div className='relative z-10 max-w-[var(--container-max)] mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]'>
-        <header data-animate className='text-center max-w-3xl mx-auto mb-20 md:mb-28'>
+        <header
+          data-animate
+          className='text-center max-w-3xl mx-auto mb-20 md:mb-28'
+        >
           <span className='font-[family-name:var(--font-mono)] text-[12px] tracking-[0.22em] uppercase text-primary'>
             {t("kicker")}
           </span>
